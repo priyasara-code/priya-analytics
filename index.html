@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Priya Saravanakumaran | Digital Marketing & Analytics – Minneapolis, MN</title>
+<meta name="description" content="Data-driven digital marketing, SEO, web development, and predictive analytics for Twin Cities businesses. UMN-trained. Book a free consultation.">
+<meta name="keywords" content="digital marketing Minneapolis, SEO Twin Cities, data analytics consultant, predictive analytics Minnesota, website development Minneapolis">
+<meta property="og:title" content="Priya Saravanakumaran | Digital Marketing & Analytics">
+<meta property="og:description" content="Data-driven digital marketing, SEO, web development, and predictive analytics for Twin Cities businesses.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+/* ===== DARK THEME (default) ===== */
+:root, [data-theme="dark"]{
+--bg:#0A0F1C;--bg2:#111827;--bg3:#1A2236;--card:#151D2E;
+--accent:#6366F1;--accent2:#818CF8;--glow:rgba(99,102,241,0.15);
+--text:#E2E8F0;--muted:#94A3B8;--dim:#64748B;--white:#F8FAFC;
+--border:#1E293B;--grad:linear-gradient(135deg,#6366F1 0%,#8B5CF6 50%,#A78BFA 100%);
+--green:#10B981;--green-glow:rgba(16,185,129,0.12);
+--amber:#F59E0B;--amber-glow:rgba(245,158,11,0.12);
+--nav-bg:rgba(10,15,28,.95);--nav-border:var(--border);
+--shadow:rgba(0,0,0,.3);--img-border:var(--border);
+--toggle-bg:#1E293B;--toggle-knob:#F8FAFC;--toggle-icon-sun:#94A3B8;--toggle-icon-moon:#818CF8;
+--form-bg:var(--bg);--btn-white-bg:rgba(255,255,255,.1);--btn-white-border:rgba(255,255,255,.15);--btn-white-text:var(--white);
+--featured-bg:rgba(99,102,241,.04)
+}
+
+/* ===== LIGHT THEME ===== */
+[data-theme="light"]{
+--bg:#F8FAFC;--bg2:#F1F5F9;--bg3:#E2E8F0;--card:#FFFFFF;
+--accent:#6366F1;--accent2:#4F46E5;--glow:rgba(99,102,241,0.08);
+--text:#1E293B;--muted:#475569;--dim:#64748B;--white:#0F172A;
+--border:#E2E8F0;--grad:linear-gradient(135deg,#6366F1 0%,#7C3AED 50%,#8B5CF6 100%);
+--green:#059669;--green-glow:rgba(5,150,105,0.08);
+--amber:#D97706;--amber-glow:rgba(217,119,6,0.08);
+--nav-bg:rgba(248,250,252,.95);--nav-border:#E2E8F0;
+--shadow:rgba(0,0,0,.06);--img-border:#E2E8F0;
+--toggle-bg:#E2E8F0;--toggle-knob:#0F172A;--toggle-icon-sun:#F59E0B;--toggle-icon-moon:#94A3B8;
+--form-bg:#F1F5F9;--btn-white-bg:rgba(0,0,0,.05);--btn-white-border:rgba(0,0,0,.1);--btn-white-text:#1E293B;
+--featured-bg:rgba(99,102,241,.04)
+}
+
+[data-theme="light"] .hero-glow1,
+[data-theme="light"] .hero-glow2{opacity:.4}
+[data-theme="light"] .cta-glow{background:radial-gradient(ellipse at center,rgba(99,102,241,.06) 0%,transparent 70%)}
+[data-theme="light"] .nav-logo{box-shadow:0 2px 8px rgba(99,102,241,.2)}
+[data-theme="light"] .card:hover{box-shadow:0 8px 24px rgba(0,0,0,.08)}
+[data-theme="light"] .pricing-card.featured{box-shadow:0 0 40px rgba(99,102,241,.1)}
+
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;transition:background .3s,color .3s}
+a{color:var(--accent2);text-decoration:none;transition:opacity .2s}a:hover{opacity:.8}
+.page{display:none}.page.active{display:block}
+
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 32px;transition:all .3s}
+.nav.scrolled{background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:1px solid var(--nav-border)}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.nav-brand{display:flex;align-items:center;gap:10px;cursor:pointer}
+.nav-logo{width:36px;height:36px;border-radius:10px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;color:#fff;transition:box-shadow .3s}
+.nav-name{font-weight:700;font-size:16px;color:var(--white);transition:color .3s}
+.nav-links{display:flex;gap:4px;align-items:center}
+.nav-link{padding:8px 16px;border-radius:8px;font-size:14px;cursor:pointer;font-weight:400;color:var(--muted);background:transparent;border:none;transition:all .2s;font-family:inherit}
+.nav-link:hover,.nav-link.active{color:var(--accent2);background:var(--glow);font-weight:600}
+.nav-contact{background:var(--grad)!important;color:#fff!important;font-weight:600!important;border-radius:8px!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px}
+.hamburger span{width:24px;height:2px;background:var(--white);transition:all .3s}
+.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:var(--nav-bg);backdrop-filter:blur(16px);padding:16px;border-bottom:1px solid var(--nav-border);z-index:999}
+.mobile-menu.open{display:flex;flex-direction:column;gap:4px}
+.mobile-menu .nav-link{width:100%;text-align:left;padding:12px 16px}
+
+/* Theme Toggle */
+.theme-toggle{display:flex;align-items:center;gap:8px;margin-left:8px}
+.toggle-track{width:52px;height:28px;border-radius:14px;background:var(--toggle-bg);position:relative;cursor:pointer;transition:background .3s;border:1px solid var(--border);flex-shrink:0}
+.toggle-knob{width:22px;height:22px;border-radius:50%;background:var(--toggle-knob);position:absolute;top:2px;left:2px;transition:transform .3s,background .3s;display:flex;align-items:center;justify-content:center;font-size:12px}
+[data-theme="light"] .toggle-knob{transform:translateX(24px)}
+.toggle-sun{font-size:14px;color:var(--toggle-icon-sun);transition:color .3s}
+.toggle-moon{font-size:14px;color:var(--toggle-icon-moon);transition:color .3s}
+
+/* Common */
+.tag{display:inline-block;background:var(--glow);color:var(--accent2);padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:.5px;transition:background .3s,color .3s}
+.tag-green{background:var(--green-glow);color:var(--green)}
+.tag-amber{background:var(--amber-glow);color:var(--amber)}
+.btn{display:inline-block;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;transition:all .3s;border:none;font-family:inherit}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 4px 20px rgba(99,102,241,.2)}
+.btn-primary:hover{box-shadow:0 8px 30px rgba(99,102,241,.35)}
+.btn-outline{background:transparent;color:var(--accent2);border:2px solid var(--accent)}
+.btn-white{background:var(--btn-white-bg);color:var(--btn-white-text);border:1px solid var(--btn-white-border)}
+.btn-white:hover{opacity:.8}
+.section-title{text-align:center;margin-bottom:48px}
+.section-title h2{font-size:32px;font-weight:700;color:var(--white);margin:16px 0 12px;line-height:1.3;transition:color .3s}
+.section-title p{color:var(--muted);font-size:16px;max-width:560px;margin:0 auto;line-height:1.6;transition:color .3s}
+.card{background:var(--card);border-radius:16px;border:1px solid var(--border);transition:all .3s}
+.card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.card-static{background:var(--card);border-radius:16px;border:1px solid var(--border);transition:background .3s,border-color .3s}
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+.section{padding:80px 32px;transition:background .3s}.section-alt{background:var(--bg2)}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 32px 80px;position:relative;overflow:hidden}
+.hero-glow1{position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.08) 0%,transparent 70%);transition:opacity .3s}
+.hero-glow2{position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.06) 0%,transparent 70%);transition:opacity .3s}
+.hero-inner{max-width:1100px;margin:0 auto;display:flex;gap:60px;align-items:center;flex-wrap:wrap;position:relative}
+.hero-text{flex:1 1 480px}
+.hero-text h1{font-size:44px;font-weight:800;color:var(--white);line-height:1.15;margin:20px 0;transition:color .3s}
+.gradient-text{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.services-grid{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;max-width:1000px;margin:0 auto}
+.service-card{flex:1 1 280px;max-width:310px;padding:32px;text-align:center}
+.diff-wrap{max-width:1000px;margin:0 auto;display:flex;gap:48px;align-items:center;flex-wrap:wrap}
+.diff-text{flex:1 1 420px}
+.diff-check{display:flex;gap:12px;margin-bottom:10px;align-items:flex-start}
+.diff-check span:first-child{color:var(--accent2);font-size:18px;line-height:22px}
+.diff-check span:last-child{color:var(--text);font-size:14px;transition:color .3s}
+.portfolio-grid{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;max-width:1000px;margin:0 auto}
+.portfolio-card{flex:1 1 280px;max-width:400px;border-radius:16px;overflow:hidden;cursor:pointer}
+.portfolio-thumb{height:160px;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:13px}
+.portfolio-card-body{padding:24px}
+.portfolio-card-body h3{font-size:16px;font-weight:700;color:var(--white);margin-bottom:8px;transition:color .3s}
+.portfolio-card-body p{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px}
+.testimonial-card{max-width:640px;margin:0 auto;padding:40px;text-align:center}
+.process-grid{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;max-width:900px;margin:0 auto}
+.process-step{flex:1 1 240px;max-width:260px;text-align:center}
+.process-num{width:56px;height:56px;border-radius:16px;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:22px;font-weight:700}
+.cta-section{text-align:center;position:relative;overflow:hidden}
+.cta-glow{position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at center,rgba(99,102,241,.1) 0%,transparent 70%);transition:background .3s}
+.svc-detail{padding:48px 32px}
+.svc-header{display:flex;gap:16px;align-items:center;margin-bottom:16px}
+.svc-box{background:var(--card);border-radius:12px;padding:24px;border:1px solid var(--border);margin-bottom:16px;transition:background .3s,border-color .3s}
+.svc-box-label{color:var(--dim);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+.svc-check{display:flex;gap:10px;margin-bottom:8px;align-items:flex-start}
+.svc-check span:first-child{color:var(--accent2);font-size:16px}
+.svc-check span:last-child{color:var(--text);font-size:14px;transition:color .3s}
+.portfolio-item{background:var(--card);border-radius:16px;border:1px solid var(--border);margin-bottom:24px;overflow:hidden;transition:background .3s,border-color .3s}
+.portfolio-item-header{padding:32px;cursor:pointer;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.portfolio-item-thumb{width:80px;height:80px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--dim)}
+.portfolio-item-info{flex:1}
+.portfolio-item-info h3{font-size:20px;font-weight:700;color:var(--white);margin-top:8px;transition:color .3s}
+.portfolio-arrow{color:var(--accent2);font-size:24px;transition:transform .3s}
+.portfolio-arrow.open{transform:rotate(180deg)}
+.portfolio-detail{padding:0 32px 32px;border-top:1px solid var(--border);padding-top:24px;display:none}
+.portfolio-detail.open{display:block}
+.pd-section{margin-bottom:20px}
+.pd-label{color:var(--dim);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.approach-item,.result-item{display:flex;gap:10px;margin-bottom:6px}
+.approach-item span:first-child,.result-item span:first-child{color:var(--accent2)}
+.approach-item span:last-child,.result-item span:last-child{color:var(--text);font-size:14px;line-height:1.6;transition:color .3s}
+.tools-wrap{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.tool-tag{background:var(--glow);color:var(--accent2);padding:4px 12px;border-radius:6px;font-size:12px;font-weight:500;transition:background .3s,color .3s}
+.about-wrap{max-width:800px;margin:0 auto}
+.about-top{display:flex;gap:40px;flex-wrap:wrap;margin-bottom:48px}
+.about-card{margin-bottom:32px}
+.about-card h2{font-size:22px;font-weight:700;color:var(--white);margin-bottom:16px;transition:color .3s}
+.skills-wrap{display:flex;gap:8px;flex-wrap:wrap}
+.skill-tag{background:var(--glow);color:var(--accent2);padding:6px 14px;border-radius:8px;font-size:13px;font-weight:500;transition:background .3s,color .3s}
+.exp-item{padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid var(--border)}
+.exp-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.contact-wrap{max-width:900px;margin:0 auto;display:flex;gap:40px;flex-wrap:wrap}
+.contact-form-wrap{flex:1 1 380px}
+.contact-sidebar{flex:1 1 280px}
+.form-card{padding:32px}
+.form-card h3{font-size:18px;font-weight:700;color:var(--white);margin-bottom:24px;transition:color .3s}
+.form-row{display:flex;gap:16px;margin-bottom:16px}
+.form-group{flex:1;margin-bottom:16px}
+.form-label{color:var(--dim);font-size:13px;font-weight:500;display:block;margin-bottom:6px}
+.form-input,.form-select,.form-textarea{width:100%;padding:12px 16px;border-radius:10px;border:1px solid var(--border);background:var(--form-bg);color:var(--text);font-size:14px;font-family:inherit;outline:none;transition:border-color .2s,background .3s,color .3s}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--accent)}
+.form-textarea{resize:vertical}
+.form-submit{width:100%;background:var(--grad);color:#fff;border:none;padding:14px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .3s}
+.form-submit:hover{box-shadow:0 8px 30px rgba(99,102,241,.35);transform:translateY(-1px)}
+.sidebar-card{padding:32px;margin-bottom:24px}
+.sidebar-card h3{font-size:18px;font-weight:700;color:var(--white);margin-bottom:20px;transition:color .3s}
+.contact-item{display:flex;gap:14px;margin-bottom:16px;align-items:flex-start}
+.footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 32px 24px;transition:background .3s,border-color .3s}
+.footer-inner{max-width:1000px;margin:0 auto;display:flex;gap:48px;flex-wrap:wrap;margin-bottom:32px}
+.footer-col{flex:1 1 200px}
+.footer-label{color:var(--dim);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+.footer-link{color:var(--muted);font-size:13px;margin-bottom:8px;cursor:pointer;display:block;transition:color .2s}
+.footer-link:hover{color:var(--accent2)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:20px;text-align:center;max-width:1000px;margin:0 auto}
+
+/* Pricing */
+.pricing-grid{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;max-width:1100px;margin:0 auto}
+.pricing-card{flex:1 1 300px;max-width:340px;padding:0;position:relative;overflow:hidden}
+.pricing-card.featured{border-color:var(--accent);box-shadow:0 0 40px rgba(99,102,241,.15)}
+.pricing-badge{position:absolute;top:16px;right:16px}
+.pricing-header{padding:32px 28px 24px;border-bottom:1px solid var(--border)}
+.pricing-header h3{font-size:20px;font-weight:700;color:var(--white);margin-bottom:4px;transition:color .3s}
+.pricing-header .price{font-size:40px;font-weight:800;color:var(--white);margin:12px 0 4px;transition:color .3s}
+.pricing-header .price-note{font-size:13px;color:var(--dim)}
+.pricing-body{padding:24px 28px 28px}
+.pricing-item{display:flex;gap:10px;margin-bottom:10px;align-items:flex-start}
+.pricing-item span:first-child{color:var(--accent2);font-size:15px;flex-shrink:0;margin-top:1px}
+.pricing-item span:last-child{color:var(--text);font-size:14px;line-height:1.5;transition:color .3s}
+.pricing-divider{height:1px;background:var(--border);margin:16px 0}
+.pricing-section-label{color:var(--dim);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:12px}
+.retainer-grid{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;max-width:1000px;margin:0 auto}
+.retainer-card{flex:1 1 280px;max-width:320px;padding:28px}
+.retainer-card h4{font-size:17px;font-weight:700;color:var(--white);margin-bottom:4px;transition:color .3s}
+.retainer-price{font-size:28px;font-weight:800;color:var(--accent2);margin:8px 0 4px;transition:color .3s}
+.retainer-price span{font-size:14px;font-weight:400;color:var(--dim)}
+.addon-grid{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;max-width:900px;margin:0 auto}
+.addon-item{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;flex:1 1 240px;max-width:280px;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:background .3s,border-color .3s}
+.addon-item:hover{border-color:var(--accent)}
+.addon-name{font-size:14px;color:var(--text);font-weight:500;transition:color .3s}
+.addon-price{font-size:15px;color:var(--accent2);font-weight:700;white-space:nowrap}
+.why-grid{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;max-width:1000px;margin:0 auto}
+.why-card{flex:1 1 200px;max-width:240px;text-align:center;padding:24px 16px}
+.why-icon{font-size:28px;margin-bottom:12px}
+.why-card h4{font-size:15px;font-weight:700;color:var(--white);margin-bottom:8px;transition:color .3s}
+.why-card p{font-size:13px;color:var(--muted);line-height:1.6;transition:color .3s}
+
+@media(max-width:768px){
+.nav-links{display:none}.hamburger{display:flex}
+.theme-toggle-desktop{display:none!important}
+.hero-text h1{font-size:30px}.hero{padding:100px 20px 60px}.hero-inner{gap:40px}
+.section{padding:60px 20px}.diff-wrap{flex-direction:column}
+.about-top{flex-direction:column;align-items:center;text-align:center}
+.contact-wrap{flex-direction:column}.form-row{flex-direction:column;gap:0}
+.section-title h2{font-size:26px}
+.portfolio-item-header{padding:20px}.portfolio-detail{padding:0 20px 20px}
+.svc-detail{padding:32px 20px}
+.pricing-card{max-width:100%}.pricing-header .price{font-size:32px}
+.retainer-card{max-width:100%}.addon-item{max-width:100%}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="navbar">
+<div class="nav-inner">
+<div class="nav-brand" onclick="navigateTo('home')">
+<div class="nav-logo">P</div>
+<span class="nav-name">Priya Saravanakumaran</span>
+</div>
+<div class="nav-links">
+<button class="nav-link active" data-page="home" onclick="navigateTo('home')">Home</button>
+<button class="nav-link" data-page="services" onclick="navigateTo('services')">Services</button>
+<button class="nav-link" data-page="pricing" onclick="navigateTo('pricing')">Pricing</button>
+<button class="nav-link" data-page="portfolio" onclick="navigateTo('portfolio')">Portfolio</button>
+<button class="nav-link" data-page="about" onclick="navigateTo('about')">About</button>
+<button class="nav-link nav-contact" data-page="contact" onclick="navigateTo('contact')">Contact</button>
+<div class="theme-toggle theme-toggle-desktop" style="margin-left:8px">
+<span class="toggle-sun">☀️</span>
+<div class="toggle-track" onclick="toggleTheme()" aria-label="Toggle light/dark mode" role="button" tabindex="0">
+<div class="toggle-knob"></div>
+</div>
+<span class="toggle-moon">🌙</span>
+</div>
+</div>
+<div style="display:flex;align-items:center;gap:8px">
+<div class="theme-toggle" id="mobileToggle" style="display:none">
+<span class="toggle-sun">☀️</span>
+<div class="toggle-track" onclick="toggleTheme()" aria-label="Toggle light/dark mode" role="button" tabindex="0">
+<div class="toggle-knob"></div>
+</div>
+<span class="toggle-moon">🌙</span>
+</div>
+<button class="hamburger" onclick="toggleMobile()" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+</div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<button class="nav-link" onclick="navigateTo('home')">Home</button>
+<button class="nav-link" onclick="navigateTo('services')">Services</button>
+<button class="nav-link" onclick="navigateTo('pricing')">Pricing</button>
+<button class="nav-link" onclick="navigateTo('portfolio')">Portfolio</button>
+<button class="nav-link" onclick="navigateTo('about')">About</button>
+<button class="nav-link" onclick="navigateTo('contact')">Contact</button>
+</div>
+
+<!-- ==================== HOME ==================== -->
+<div class="page active" id="page-home">
+
+<section class="hero">
+<div class="hero-glow1"></div><div class="hero-glow2"></div>
+<div class="hero-inner">
+<div class="hero-text">
+<div class="fade-in"><span class="tag">MINNEAPOLIS–ST. PAUL, MN</span></div>
+<div class="fade-in"><h1>Data-Driven Marketing<br>& Analytics for<br><span class="gradient-text">Twin Cities Businesses</span></h1></div>
+<div class="fade-in"><p style="font-size:17px;color:var(--muted);line-height:1.7;margin-bottom:32px;max-width:500px">I help small and mid-sized businesses in Minneapolis–St. Paul grow smarter — with digital marketing strategy, SEO, custom websites, and predictive analytics grounded in real data, not guesswork.</p></div>
+<div class="fade-in" style="display:flex;gap:16px;flex-wrap:wrap">
+<button class="btn btn-primary" onclick="navigateTo('contact')">Book a Free Strategy Call</button>
+<button class="btn btn-outline" onclick="navigateTo('pricing')">View Pricing →</button>
+</div>
+<div class="fade-in" style="display:flex;gap:32px;margin-top:48px">
+<div><div style="font-size:20px;font-weight:700;color:var(--accent2)">UMN</div><div style="font-size:12px;color:var(--dim);margin-top:2px">Master's Analytics</div></div>
+<div><div style="font-size:20px;font-weight:700;color:var(--accent2)">5+</div><div style="font-size:12px;color:var(--dim);margin-top:2px">Services</div></div>
+<div><div style="font-size:20px;font-weight:700;color:var(--accent2)">Twin Cities</div><div style="font-size:12px;color:var(--dim);margin-top:2px">Based</div></div>
+</div>
+</div>
+<div class="fade-in" style="flex:0 0 300px;display:flex;justify-content:center">
+<img src="https://i.imgur.com/t2uwk9A.jpeg" alt="Priya Saravanakumaran, digital marketing and analytics consultant in Minneapolis" style="width:280px;height:340px;border-radius:20px;object-fit:cover;border:2px solid var(--img-border);box-shadow:0 20px 60px var(--shadow);transition:border-color .3s,box-shadow .3s">
+</div>
+</div>
+</section>
+
+<!-- Empathy -->
+<section class="section">
+<div style="max-width:700px;margin:0 auto;text-align:center">
+<div class="fade-in section-title"><span class="tag">THE CHALLENGE</span><h2>Your Marketing Should Work as Hard as You Do</h2></div>
+<div class="fade-in"><p style="color:var(--muted);font-size:16px;line-height:1.8;margin-bottom:16px">You've built something real — a business that serves your community. But between running operations, managing staff, and keeping customers happy, marketing keeps falling to the bottom of the list.</p></div>
+<div class="fade-in"><p style="color:var(--muted);font-size:16px;line-height:1.8;margin-bottom:16px">Maybe you've tried running ads without seeing results. Maybe your website isn't showing up on Google. Maybe you have plenty of data but no idea what it's telling you.</p></div>
+<div class="fade-in"><p style="color:var(--accent2);font-size:16px;line-height:1.8;font-weight:500">That's where I come in. I combine modern digital marketing with advanced data analytics to build strategies that are clear, measurable, and built for businesses like yours.</p></div>
+</div>
+</section>
+
+<!-- Services Preview -->
+<section class="section section-alt">
+<div class="fade-in section-title"><span class="tag">SERVICES</span><h2>How I Can Help</h2><p>End-to-end marketing and analytics services designed for Twin Cities small businesses.</p></div>
+<div class="services-grid">
+<div class="card service-card fade-in" onclick="navigateTo('services')">
+<div style="font-size:36px;margin-bottom:16px">🎯</div>
+<h3 style="font-size:18px;font-weight:700;color:var(--white);margin-bottom:12px">Digital Marketing & SEO</h3>
+<p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:16px">Integrated marketing strategy and search engine optimization to help Twin Cities customers find you on Google — and keep coming back.</p>
+<a onclick="navigateTo('services')" style="font-weight:600;font-size:14px;cursor:pointer">Learn More →</a>
+</div>
+<div class="card service-card fade-in" onclick="navigateTo('services')">
+<div style="font-size:36px;margin-bottom:16px">💻</div>
+<h3 style="font-size:18px;font-weight:700;color:var(--white);margin-bottom:12px">Website Design & Development</h3>
+<p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:16px">Modern, mobile-first websites built to load fast, rank well, and turn visitors into customers.</p>
+<a onclick="navigateTo('services')" style="font-weight:600;font-size:14px;cursor:pointer">Learn More →</a>
+</div>
+<div class="card service-card fade-in" onclick="navigateTo('services')">
+<div style="font-size:36px;margin-bottom:16px">📊</div>
+<h3 style="font-size:18px;font-weight:700;color:var(--white);margin-bottom:12px">Data & Predictive Analytics</h3>
+<p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:16px">Transform your business data into clear dashboards and actionable insights with predictive models that forecast what's next.</p>
+<a onclick="navigateTo('services')" style="font-weight:600;font-size:14px;cursor:pointer">Learn More →</a>
+</div>
+</div>
+</section>
+
+<!-- Differentiator -->
+<section class="section">
+<div class="diff-wrap">
+<div class="diff-text fade-in">
+<span class="tag">WHY ME</span>
+<h2 style="font-size:30px;font-weight:700;color:var(--white);margin:16px 0;line-height:1.3">Marketing Expertise Meets Data Science</h2>
+<p style="color:var(--muted);line-height:1.7;margin-bottom:16px">Most marketers rely on best practices and intuition. I bring something different.</p>
+<p style="color:var(--muted);line-height:1.7;margin-bottom:24px">I'm currently completing my Master's of Applied Business Analytics at the University of Minnesota — one of the top programs in the country for data-driven decision making. Every strategy I build is informed by statistical modeling, predictive analytics, and rigorous data analysis.</p>
+<div class="diff-check"><span>✓</span><span>Master's of Applied Business Analytics — University of Minnesota (in progress)</span></div>
+<div class="diff-check"><span>✓</span><span>Predictive modeling, customer segmentation & data visualization</span></div>
+<div class="diff-check"><span>✓</span><span>SEO, social media strategy, web development & research</span></div>
+<div class="diff-check"><span>✓</span><span>Minneapolis–St. Paul, working with Twin Cities businesses</span></div>
+<div style="margin-top:24px"><button class="btn btn-outline" onclick="navigateTo('about')">Learn More About My Background →</button></div>
+</div>
+<div class="fade-in" style="flex:0 0 280px;display:flex;justify-content:center">
+<img src="https://i.imgur.com/t2uwk9A.jpeg" alt="Priya Saravanakumaran, UMN analytics student" style="width:260px;height:220px;border-radius:16px;object-fit:cover;object-position:center top;border:1px solid var(--img-border);transition:border-color .3s">
+</div>
+</div>
+</section>
+
+<!-- Portfolio Preview -->
+<section class="section section-alt">
+<div class="fade-in section-title"><span class="tag">PORTFOLIO</span><h2>Selected Projects</h2><p>Here's how I've applied marketing strategy and analytics to solve real business challenges.</p></div>
+<div class="portfolio-grid">
+<div class="card portfolio-card fade-in" onclick="navigateTo('portfolio')">
+<div class="portfolio-thumb" style="background:rgba(99,102,241,.1)">Project Thumbnail</div>
+<div class="portfolio-card-body">
+<h3>Nonprofit Social Media Overhaul</h3>
+<p>Rebuilt social media strategy for an international organization, increasing engagement and streamlining operations.</p>
+<span style="color:var(--accent2);font-weight:600;font-size:13px">View Case Study →</span>
+</div>
+</div>
+<div class="card portfolio-card fade-in" onclick="navigateTo('portfolio')">
+<div class="portfolio-thumb" style="background:rgba(139,92,246,.15);font-size:32px;color:var(--accent2)">▶</div>
+<div class="portfolio-card-body">
+<h3>Seaborn Data Visualization Tutorial</h3>
+<p>Video demo of Python data visualization techniques — created for UMN's Programming for Data Analytics course.</p>
+<span style="color:var(--accent2);font-weight:600;font-size:13px">View Case Study →</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Testimonial -->
+<section class="section">
+<div class="fade-in">
+<div class="section-title"><span class="tag">TESTIMONIALS</span><h2>What People Are Saying</h2></div>
+<div class="card-static testimonial-card">
+<div style="font-size:56px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:12px">"</div>
+<p style="font-size:17px;color:var(--text);font-style:italic;line-height:1.8;margin-bottom:24px">Priya has a rare combination of creative marketing instinct and rigorous analytical thinking. She doesn't just execute — she understands why a strategy should work and measures whether it does.</p>
+<div style="width:48px;height:48px;border-radius:50%;background:var(--glow);margin:0 auto 8px;display:flex;align-items:center;justify-content:center;color:var(--accent2);font-weight:700;font-size:14px">PS</div>
+<p style="font-weight:600;color:var(--white);font-size:15px">Your Name Here</p>
+<p style="color:var(--dim);font-size:13px">Title, Organization</p>
+</div>
+<p style="text-align:center;margin-top:12px;font-size:12px;color:var(--dim);font-style:italic">Replace with a real testimonial from a professor, supervisor, or client</p>
+</div>
+</section>
+
+<!-- Process -->
+<section class="section section-alt">
+<div class="fade-in section-title"><span class="tag">PROCESS</span><h2>Getting Started Is Simple</h2></div>
+<div class="process-grid">
+<div class="process-step fade-in"><div class="process-num">1</div><h3 style="font-size:17px;font-weight:700;color:var(--white);margin-bottom:8px">Book a Free Call</h3><p style="font-size:14px;color:var(--muted);line-height:1.6">Schedule a 30-minute strategy session. We'll discuss your goals, current marketing, and where data can make the biggest impact.</p></div>
+<div class="process-step fade-in"><div class="process-num">2</div><h3 style="font-size:17px;font-weight:700;color:var(--white);margin-bottom:8px">Get a Custom Plan</h3><p style="font-size:14px;color:var(--muted);line-height:1.6">I'll audit your digital presence and deliver a tailored strategy — with clear priorities, timelines, and expected outcomes.</p></div>
+<div class="process-step fade-in"><div class="process-num">3</div><h3 style="font-size:17px;font-weight:700;color:var(--white);margin-bottom:8px">Grow With Confidence</h3><p style="font-size:14px;color:var(--muted);line-height:1.6">We execute together, track results in real time, and adjust based on what the data tells us. No guesswork — just growth.</p></div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="section cta-section">
+<div class="cta-glow"></div>
+<div class="fade-in" style="position:relative">
+<h2 style="font-size:32px;font-weight:700;color:var(--white);margin-bottom:16px">Ready to Make Data Work for Your Business?</h2>
+<p style="color:var(--muted);font-size:16px;max-width:500px;margin:0 auto 32px">Whether you need a new website, a smarter SEO strategy, or analytics that finally make sense — let's talk. Your first consultation is free.</p>
+<div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+<button class="btn btn-primary" onclick="navigateTo('contact')">Book Your Free Strategy Call</button>
+<button class="btn btn-white" onclick="navigateTo('pricing')">View Pricing</button>
+</div>
+<p style="color:var(--dim);font-size:13px;margin-top:16px">Or email me at sivapriya.saravan@gmail.com</p>
+</div>
+</section>
+</div>
+
+<!-- ==================== SERVICES ==================== -->
+<div class="page" id="page-services">
+<div style="padding-top:100px">
+<div style="padding:60px 32px 40px;text-align:center">
+<div class="fade-in"><span class="tag">WHAT I OFFER</span></div>
+<div class="fade-in"><h1 style="font-size:38px;font-weight:800;color:var(--white);margin:16px 0">Services</h1></div>
+<div class="fade-in"><p style="color:var(--muted);font-size:16px;max-width:560px;margin:0 auto;line-height:1.7">End-to-end marketing and analytics services designed for Twin Cities small businesses. Every engagement starts with a free consultation.</p></div>
+</div>
+
+<div class="svc-detail"><div style="max-width:800px;margin:0 auto" class="fade-in">
+<div class="svc-header"><span style="font-size:32px">🎯</span><div><span class="tag">STRATEGY</span><h2 style="font-size:24px;font-weight:700;color:var(--white);margin-top:8px">Digital Marketing Strategy</h2></div></div>
+<p style="color:var(--accent2);font-size:17px;font-weight:500;margin-bottom:16px;line-height:1.6">Stop guessing. Start growing with marketing campaigns built on data and designed for results.</p>
+<p style="color:var(--muted);font-size:15px;line-height:1.7;margin-bottom:16px">I build integrated marketing strategies that connect your business goals to the right channels — search, social, email, and paid media. Every campaign comes with clear KPIs, so you always know what's working and what needs adjusting.</p>
+<div class="svc-box"><p class="svc-box-label">Ideal For</p><p style="color:var(--text);font-size:14px;line-height:1.6">Twin Cities small businesses and startups that want to grow their customer base but aren't sure where to invest their marketing budget.</p></div>
+<div class="svc-box"><p class="svc-box-label">What's Included</p><div class="svc-check"><span>✓</span><span>Marketing audit & competitive analysis</span></div><div class="svc-check"><span>✓</span><span>Channel strategy (SEO, social, email, paid)</span></div><div class="svc-check"><span>✓</span><span>Campaign planning with KPI framework</span></div><div class="svc-check"><span>✓</span><span>Monthly performance reporting & optimization</span></div></div>
+<button class="btn btn-primary" onclick="navigateTo('pricing')">View Pricing →</button>
+</div></div>
+
+<div class="svc-detail section-alt"><div style="max-width:800px;margin:0 auto" class="fade-in">
+<div class="svc-header"><span style="font-size:32px">🔍</span><div><span class="tag">SEO</span><h2 style="font-size:24px;font-weight:700;color:var(--white);margin-top:8px">Search Engine Optimization</h2></div></div>
+<p style="color:var(--accent2);font-size:17px;font-weight:500;margin-bottom:16px;line-height:1.6">Get found when Twin Cities customers search for your services. Rank higher. Get more traffic. Win more business.</p>
+<p style="color:var(--muted);font-size:15px;line-height:1.7;margin-bottom:16px">I specialize in local SEO for Minneapolis–St. Paul businesses. From technical audits to content optimization to Google Business Profile setup, I make sure your business shows up where your customers are searching.</p>
+<div class="svc-box"><p class="svc-box-label">Ideal For</p><p style="color:var(--text);font-size:14px;line-height:1.6">Local businesses that rely on customers finding them through Google — restaurants, law firms, home services, healthcare, retail, and professional services.</p></div>
+<div class="svc-box"><p class="svc-box-label">What's Included</p><div class="svc-check"><span>✓</span><span>Technical SEO audit & fixes</span></div><div class="svc-check"><span>✓</span><span>Keyword research & local keyword strategy</span></div><div class="svc-check"><span>✓</span><span>On-page optimization (titles, metas, headers, content)</span></div><div class="svc-check"><span>✓</span><span>Google Business Profile setup & optimization</span></div><div class="svc-check"><span>✓</span><span>Local citation building & review strategy</span></div><div class="svc-check"><span>✓</span><span>Monthly ranking & traffic reports</span></div></div>
+<button class="btn btn-primary" onclick="navigateTo('pricing')">View Pricing →</button>
+</div></div>
+
+<div class="svc-detail"><div style="max-width:800px;margin:0 auto" class="fade-in">
+<div class="svc-header"><span style="font-size:32px">💻</span><div><span class="tag">WEB DEV</span><h2 style="font-size:24px;font-weight:700;color:var(--white);margin-top:8px">Website Design & Development</h2></div></div>
+<p style="color:var(--accent2);font-size:17px;font-weight:500;margin-bottom:16px;line-height:1.6">Your website is your hardest-working employee. Make sure it's doing its job.</p>
+<p style="color:var(--muted);font-size:15px;line-height:1.7;margin-bottom:16px">I design and build modern, mobile-first websites that look professional, load fast, and are optimized for search engines from day one. Whether you need a brand-new site or a redesign, I focus on turning visitors into customers.</p>
+<div class="svc-box"><p class="svc-box-label">Ideal For</p><p style="color:var(--text);font-size:14px;line-height:1.6">Businesses that need a new website, a redesign, or landing pages for specific campaigns. Especially those whose current site is outdated, slow, or not generating leads.</p></div>
+<div class="svc-box"><p class="svc-box-label">What's Included</p><div class="svc-check"><span>✓</span><span>Custom website design & development</span></div><div class="svc-check"><span>✓</span><span>Mobile-responsive, fast-loading builds</span></div><div class="svc-check"><span>✓</span><span>SEO-optimized structure from the start</span></div><div class="svc-check"><span>✓</span><span>Contact forms, booking integrations, CTAs</span></div><div class="svc-check"><span>✓</span><span>Basic analytics setup (GA4, Search Console)</span></div></div>
+<button class="btn btn-primary" onclick="navigateTo('pricing')">View Pricing →</button>
+</div></div>
+
+<div class="svc-detail section-alt"><div style="max-width:800px;margin:0 auto" class="fade-in">
+<div class="svc-header"><span style="font-size:32px">📊</span><div><span class="tag">ANALYTICS</span><h2 style="font-size:24px;font-weight:700;color:var(--white);margin-top:8px">Business Data Analytics</h2></div></div>
+<p style="color:var(--accent2);font-size:17px;font-weight:500;margin-bottom:16px;line-height:1.6">You have the data. I'll turn it into decisions.</p>
+<p style="color:var(--muted);font-size:15px;line-height:1.7;margin-bottom:16px">I help businesses make sense of their data by building clear, visual dashboards and reports that highlight what matters. Whether it's sales trends, customer demographics, or marketing performance — I translate numbers into actions.</p>
+<div class="svc-box"><p class="svc-box-label">Ideal For</p><p style="color:var(--text);font-size:14px;line-height:1.6">Businesses that collect data (through their website, CRM, POS system, or spreadsheets) but aren't using it to make decisions.</p></div>
+<div class="svc-box"><p class="svc-box-label">What's Included</p><div class="svc-check"><span>✓</span><span>Data audit & cleaning</span></div><div class="svc-check"><span>✓</span><span>Custom dashboard creation (Tableau, Power BI, or Google Data Studio)</span></div><div class="svc-check"><span>✓</span><span>KPI identification & tracking framework</span></div><div class="svc-check"><span>✓</span><span>Monthly or quarterly business intelligence reports</span></div></div>
+<button class="btn btn-primary" onclick="navigateTo('pricing')">View Pricing →</button>
+</div></div>
+
+<div class="svc-detail"><div style="max-width:800px;margin:0 auto" class="fade-in">
+<div class="svc-header"><span style="font-size:32px">🔮</span><div><span class="tag">PREDICTIVE</span><h2 style="font-size:24px;font-weight:700;color:var(--white);margin-top:8px">Predictive Analytics</h2></div></div>
+<p style="color:var(--accent2);font-size:17px;font-weight:500;margin-bottom:16px;line-height:1.6">Don't just understand what happened — forecast what's coming next.</p>
+<p style="color:var(--muted);font-size:15px;line-height:1.7;margin-bottom:16px">Using machine learning and statistical modeling techniques from my UMN Master's program, I build predictive models that help businesses forecast sales, anticipate customer behavior, and optimize marketing spend before committing budget.</p>
+<div class="svc-box"><p class="svc-box-label">Ideal For</p><p style="color:var(--text);font-size:14px;line-height:1.6">Growth-stage businesses that want to move from reactive to proactive decision-making. Especially valuable for e-commerce, subscription services, and businesses with repeat customers.</p></div>
+<div class="svc-box"><p class="svc-box-label">What's Included</p><div class="svc-check"><span>✓</span><span>Customer churn prediction models</span></div><div class="svc-check"><span>✓</span><span>Sales & demand forecasting</span></div><div class="svc-check"><span>✓</span><span>Customer segmentation & targeting</span></div><div class="svc-check"><span>✓</span><span>Marketing mix modeling & ROI prediction</span></div><div class="svc-check"><span>✓</span><span>Clear, non-technical reports with actionable recommendations</span></div></div>
+<button class="btn btn-primary" onclick="navigateTo('contact')">Get Started →</button>
+</div></div>
+</div>
+</div>
+
+<!-- ==================== PRICING ==================== -->
+<div class="page" id="page-pricing">
+<div style="padding-top:100px">
+
+<div style="padding:60px 32px 20px;text-align:center">
+<div class="fade-in"><span class="tag">TRANSPARENT PRICING</span></div>
+<div class="fade-in"><h1 style="font-size:38px;font-weight:800;color:var(--white);margin:16px 0">Professional. Affordable.<br><span class="gradient-text">Done For You.</span></h1></div>
+<div class="fade-in"><p style="color:var(--muted);font-size:16px;max-width:560px;margin:0 auto;line-height:1.7">You run your business. I'll build your online presence. No hidden fees, no confusing contracts, no tech jargon — just results.</p></div>
+</div>
+
+<section class="section">
+<div class="fade-in section-title"><span class="tag">WEBSITE PACKAGES</span><h2>Get Your Business Online</h2><p>Professional websites that load fast, look great, and rank on Google.</p></div>
+<div class="pricing-grid">
+<div class="card pricing-card fade-in">
+<div class="pricing-header">
+<span class="tag-green" style="display:inline-block;padding:4px 12px;border-radius:12px;font-size:11px;font-weight:700;letter-spacing:.5px;background:var(--green-glow);color:var(--green)">STARTER</span>
+<div class="price">$450</div>
+<p class="price-note">One-time · Delivered in 10–14 business days</p>
+</div>
+<div class="pricing-body">
+<p style="color:var(--muted);font-size:14px;line-height:1.6;margin-bottom:20px">Perfect for businesses that just need to exist online with a clean, professional presence.</p>
+<div class="pricing-section-label">What's Included</div>
+<div class="pricing-item"><span>✓</span><span>Professional 1–3 page website</span></div>
+<div class="pricing-item"><span>✓</span><span>Mobile-responsive design</span></div>
+<div class="pricing-item"><span>✓</span><span>Contact form setup</span></div>
+<div class="pricing-item"><span>✓</span><span>Basic on-page SEO (titles, metas)</span></div>
+<div class="pricing-item"><span>✓</span><span>Google Analytics installed</span></div>
+<div class="pricing-item"><span>✓</span><span>1 round of revisions</span></div>
+<div style="margin-top:24px"><button class="btn btn-outline" onclick="navigateTo('contact')" style="width:100%;text-align:center;padding:12px">Get Started →</button></div>
+</div>
+</div>
+<div class="card pricing-card featured fade-in">
+<div class="pricing-badge"><span style="background:var(--grad);color:#fff;padding:4px 14px;border-radius:12px;font-size:11px;font-weight:700;letter-spacing:.5px">MOST POPULAR</span></div>
+<div class="pricing-header" style="background:var(--featured-bg)">
+<span style="display:inline-block;padding:4px 12px;border-radius:12px;font-size:11px;font-weight:700;letter-spacing:.5px;background:var(--glow);color:var(--accent2)">GROWTH</span>
+<div class="price">$950</div>
+<p class="price-note">One-time · Delivered in 20–28 business days</p>
+</div>
+<div class="pricing-body">
+<p style="color:var(--muted);font-size:14px;line-height:1.6;margin-bottom:20px">For businesses ready to show up on Google and start attracting new customers consistently.</p>
+<div class="pricing-section-label">Everything in Starter, Plus</div>
+<div class="pricing-item"><span>✓</span><span>Up to 7 pages (About, Services, Gallery, Testimonials, etc.)</span></div>
+<div class="pricing-item"><span>✓</span><span>Google Business Profile setup & optimization</span></div>
+<div class="pricing-item"><span>✓</span><span>Full on-page SEO on every page</span></div>
+<div class="pricing-item"><span>✓</span><span>Google Search Console setup</span></div>
+<div class="pricing-item"><span>✓</span><span>Social media links integration</span></div>
+<div class="pricing-item"><span>✓</span><span>2 rounds of revisions</span></div>
+<div style="margin-top:24px"><button class="btn btn-primary" onclick="navigateTo('contact')" style="width:100%;text-align:center;padding:12px">Get Started →</button></div>
+</div>
+</div>
+<div class="card pricing-card fade-in">
+<div class="pricing-header">
+<span style="display:inline-block;padding:4px 12px;border-radius:12px;font-size:11px;font-weight:700;letter-spacing:.5px;background:var(--amber-glow);color:var(--amber)">PREMIUM</span>
+<div class="price">$1,450<span style="font-size:18px;font-weight:400;color:var(--dim)">–2,000</span></div>
+<p class="price-note">One-time · Delivered in 28–42 business days</p>
+</div>
+<div class="pricing-body">
+<p style="color:var(--muted);font-size:14px;line-height:1.6;margin-bottom:20px">A complete digital brand presence — website, content, branding, and local visibility all done for you.</p>
+<div class="pricing-section-label">Everything in Growth, Plus</div>
+<div class="pricing-item"><span>✓</span><span>Up to 12 pages with custom design</span></div>
+<div class="pricing-item"><span>✓</span><span>Logo design or refinement</span></div>
+<div class="pricing-item"><span>✓</span><span>Professional copywriting for all pages</span></div>
+<div class="pricing-item"><span>✓</span><span>Local directory listings (Yelp, BBB, industry sites)</span></div>
+<div class="pricing-item"><span>✓</span><span>Image sourcing & optimization</span></div>
+<div class="pricing-item"><span>✓</span><span>Priority support · 3 rounds of revisions</span></div>
+<div style="margin-top:24px"><button class="btn btn-outline" onclick="navigateTo('contact')" style="width:100%;text-align:center;padding:12px">Get Started →</button></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section section-alt">
+<div class="fade-in section-title"><span class="tag">MONTHLY PLANS</span><h2>Keep It Fresh. Stay Visible.</h2><p>Your website shouldn't be "set it and forget it." Stay updated, stay ranked, stay ahead.</p></div>
+<div class="retainer-grid">
+<div class="card-static retainer-card fade-in">
+<h4>Basic Care</h4>
+<div class="retainer-price">$50<span>/mo</span></div>
+<p style="color:var(--muted);font-size:13px;margin-bottom:16px">Essential upkeep to keep your site running smoothly.</p>
+<div class="pricing-item"><span>✓</span><span>Monthly content & photo updates</span></div>
+<div class="pricing-item"><span>✓</span><span>Security & uptime monitoring</span></div>
+<div class="pricing-item"><span>✓</span><span>Minor text and layout edits</span></div>
+<div class="pricing-item"><span>✓</span><span>Monthly performance check</span></div>
+</div>
+<div class="card retainer-card fade-in" style="border-color:var(--accent)">
+<h4>Growth Care</h4>
+<div class="retainer-price">$100<span>/mo</span></div>
+<p style="color:var(--muted);font-size:13px;margin-bottom:16px">Everything in Basic, plus SEO performance tracking.</p>
+<div class="pricing-item"><span>✓</span><span>Everything in Basic Care</span></div>
+<div class="pricing-item"><span>✓</span><span>Monthly SEO performance report</span></div>
+<div class="pricing-item"><span>✓</span><span>Google Business Profile post (1/mo)</span></div>
+<div class="pricing-item"><span>✓</span><span>Keyword ranking tracking</span></div>
+</div>
+<div class="card-static retainer-card fade-in">
+<h4>Full SEO</h4>
+<div class="retainer-price">$250<span>/mo</span></div>
+<p style="color:var(--muted);font-size:13px;margin-bottom:16px">Ongoing optimization to grow your search visibility month over month.</p>
+<div class="pricing-item"><span>✓</span><span>Everything in Growth Care</span></div>
+<div class="pricing-item"><span>✓</span><span>Content updates & blog posts</span></div>
+<div class="pricing-item"><span>✓</span><span>Local citation management</span></div>
+<div class="pricing-item"><span>✓</span><span>Competitor monitoring & strategy adjustments</span></div>
+</div>
+</div>
+<p class="fade-in" style="text-align:center;color:var(--dim);font-size:13px;margin-top:24px">No long-term contracts. Cancel anytime with 30 days notice.</p>
+</section>
+
+<section class="section">
+<div class="fade-in section-title"><span class="tag">ADD-ONS</span><h2>À La Carte Services</h2><p>Need something extra? Add these to any package or purchase standalone.</p></div>
+<div class="addon-grid fade-in">
+<div class="addon-item"><span class="addon-name">Logo Design (from scratch)</span><span class="addon-price">$150–300</span></div>
+<div class="addon-item"><span class="addon-name">Additional Page</span><span class="addon-price">$75/page</span></div>
+<div class="addon-item"><span class="addon-name">Social Media Profile Setup</span><span class="addon-price">$100/platform</span></div>
+<div class="addon-item"><span class="addon-name">Email Marketing Setup (Mailchimp)</span><span class="addon-price">$150</span></div>
+<div class="addon-item"><span class="addon-name">Google Ads Setup + 1st Month</span><span class="addon-price">$300 + ad spend</span></div>
+<div class="addon-item"><span class="addon-name">Analytics Dashboard Build</span><span class="addon-price">$200–500</span></div>
+<div class="addon-item"><span class="addon-name">Predictive Analytics Model</span><span class="addon-price">Custom quote</span></div>
+<div class="addon-item"><span class="addon-name">Photography Coordination</span><span class="addon-price">Custom quote</span></div>
+</div>
+</section>
+
+<section class="section section-alt">
+<div class="fade-in section-title"><span class="tag">WHAT TO EXPECT</span><h2>Real Results, Realistic Timeline</h2><p>Here's what I actually do and when you'll start seeing results.</p></div>
+<div style="max-width:800px;margin:0 auto">
+<div class="card-static fade-in" style="padding:28px;margin-bottom:20px">
+<div style="display:flex;gap:16px;align-items:center;margin-bottom:16px">
+<div style="width:48px;height:48px;border-radius:12px;background:var(--glow);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">🔍</div>
+<div><h3 style="font-size:17px;font-weight:700;color:var(--white)">Google Business Profile Setup</h3><p style="font-size:13px;color:var(--dim)">Included in Growth & Premium packages</p></div>
+</div>
+<p style="color:var(--muted);font-size:14px;line-height:1.7">I'll claim or create your Google Business Profile, optimize your description with targeted keywords, select the right categories, upload professional photos, set your hours and service areas, and create your first Google Posts. This is the single fastest way to appear in local search results and Google Maps.</p>
+</div>
+<div class="card-static fade-in" style="padding:28px;margin-bottom:20px">
+<div style="display:flex;gap:16px;align-items:center;margin-bottom:16px">
+<div style="width:48px;height:48px;border-radius:12px;background:var(--glow);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">⚙️</div>
+<div><h3 style="font-size:17px;font-weight:700;color:var(--white)">On-Page SEO (Every Site I Build)</h3><p style="font-size:13px;color:var(--dim)">Included in all packages</p></div>
+</div>
+<p style="color:var(--muted);font-size:14px;line-height:1.7">Every website I build includes keyword-rich title tags, optimized meta descriptions, proper heading structure, alt text on all images, internal linking, clean URL structure, schema markup for local businesses, mobile optimization, image compression, and a submitted sitemap. This isn't an add-on — it's how every site should be built.</p>
+</div>
+<div class="card-static fade-in" style="padding:28px;margin-bottom:20px">
+<div style="display:flex;gap:16px;align-items:center;margin-bottom:16px">
+<div style="width:48px;height:48px;border-radius:12px;background:var(--glow);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">📈</div>
+<div><h3 style="font-size:17px;font-weight:700;color:var(--white)">Analytics & Tracking Setup</h3><p style="font-size:13px;color:var(--dim)">Included in all packages</p></div>
+</div>
+<p style="color:var(--muted);font-size:14px;line-height:1.7">I set up Google Analytics 4, verify your site in Google Search Console, submit your sitemap, and configure event tracking for form submissions and phone clicks. You'll get a simple monthly snapshot showing exactly how people are finding you and what they're doing on your site.</p>
+</div>
+<div class="fade-in" style="margin-top:40px">
+<div class="section-title"><h2 style="font-size:24px">Your Results Timeline</h2></div>
+<div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:center">
+<div class="card-static" style="flex:1 1 220px;max-width:260px;padding:24px;text-align:center">
+<div style="font-size:32px;font-weight:800;color:var(--accent2);margin-bottom:4px">30</div>
+<div style="font-size:12px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px">Days</div>
+<p style="font-size:13px;color:var(--muted);line-height:1.6">Site live & indexed by Google. Google Business Profile active. Baseline data collecting. Foundation built.</p>
+</div>
+<div class="card-static" style="flex:1 1 220px;max-width:260px;padding:24px;text-align:center">
+<div style="font-size:32px;font-weight:800;color:var(--accent2);margin-bottom:4px">60</div>
+<div style="font-size:12px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px">Days</div>
+<p style="font-size:13px;color:var(--muted);line-height:1.6">Pages ranking for local keywords. Appearing in "near me" searches. First organic leads trickling in.</p>
+</div>
+<div class="card-static" style="flex:1 1 220px;max-width:260px;padding:24px;text-align:center">
+<div style="font-size:32px;font-weight:800;color:var(--accent2);margin-bottom:4px">90</div>
+<div style="font-size:12px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px">Days</div>
+<p style="font-size:13px;color:var(--muted);line-height:1.6">Meaningful traffic growth (2–5x). Consistent contact form submissions. Clear data on what to optimize next.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="fade-in section-title"><span class="tag">THE DIFFERENCE</span><h2>Why Work With Me</h2></div>
+<div class="why-grid fade-in">
+<div class="why-card"><div class="why-icon">💰</div><h4>No Hidden Fees</h4><p>Your hosting is free. You own everything. I don't hold your site hostage with recurring platform fees.</p></div>
+<div class="why-card"><div class="why-icon">⚡</div><h4>Built for Speed</h4><p>Static sites load faster than WordPress or Wix. Google rewards fast sites with higher rankings.</p></div>
+<div class="why-card"><div class="why-icon">🎯</div><h4>Real SEO, Not a Checkbox</h4><p>Every site includes genuine optimization that helps local customers find you — not just a plugin install.</p></div>
+<div class="why-card"><div class="why-icon">🧠</div><h4>Data-Driven Decisions</h4><p>UMN-trained analytics. Every strategy is backed by real data, not guesswork or gut feelings.</p></div>
+</div>
+</section>
+
+<section class="section section-alt cta-section">
+<div class="cta-glow"></div>
+<div class="fade-in" style="position:relative">
+<h2 style="font-size:28px;font-weight:700;color:var(--white);margin-bottom:12px">Not Sure Which Package Is Right for You?</h2>
+<p style="color:var(--muted);font-size:16px;max-width:480px;margin:0 auto 32px;line-height:1.7">Book a free 30-minute strategy call. I'll assess your current digital presence and recommend exactly what you need — no pressure, no obligation.</p>
+<button class="btn btn-primary" onclick="navigateTo('contact')">Book Your Free Strategy Call</button>
+</div>
+</section>
+</div>
+</div>
+
+<!-- ==================== PORTFOLIO ==================== -->
+<div class="page" id="page-portfolio">
+<div style="padding-top:100px">
+<div style="padding:60px 32px 40px;text-align:center">
+<div class="fade-in"><span class="tag">MY WORK</span></div>
+<div class="fade-in"><h1 style="font-size:38px;font-weight:800;color:var(--white);margin:16px 0">Portfolio & Case Studies</h1></div>
+<div class="fade-in"><p style="color:var(--muted);font-size:16px;max-width:580px;margin:0 auto;line-height:1.7">Real projects demonstrating how I apply marketing strategy and data analytics to solve business challenges. Click any project to see the full case study.</p></div>
+</div>
+<div style="padding:0 32px 80px;max-width:900px;margin:0 auto">
+<div class="portfolio-item fade-in">
+<div class="portfolio-item-header" onclick="togglePortfolio(this)">
+<div class="portfolio-item-thumb" style="background:rgba(99,102,241,.12)">Thumb</div>
+<div class="portfolio-item-info"><span class="tag">DIGITAL MARKETING</span><h3>Nonprofit Social Media Overhaul</h3><p style="color:var(--dim);font-size:13px;margin-top:4px">Partners Jordan — Social accountability organization (MENA region)</p></div>
+<span class="portfolio-arrow">▾</span>
+</div>
+<div class="portfolio-detail">
+<div class="pd-section"><p class="pd-label">Challenge</p><p style="color:var(--text);font-size:14px;line-height:1.7">The organization's social media presence had low engagement and inconsistent posting, limiting public outreach during a critical period of research publication.</p></div>
+<div class="pd-section"><p class="pd-label">My Role</p><p style="color:var(--accent2);font-weight:500;font-size:14px">Social Media Strategist & Research Intern</p></div>
+<div class="pd-section"><p class="pd-label">Approach</p>
+<div class="approach-item"><span>→</span><span>Audited existing social channels and identified content gaps and audience engagement patterns</span></div>
+<div class="approach-item"><span>→</span><span>Developed a strategic posting schedule optimized for peak audience activity windows</span></div>
+<div class="approach-item"><span>→</span><span>Analyzed engagement data weekly to refine content strategy and messaging</span></div>
+<div class="approach-item"><span>→</span><span>Supported authorship of research papers, amplifying reach through digital channels</span></div>
+</div>
+<div class="pd-section"><p class="pd-label">Results</p>
+<div class="result-item"><span>✓</span><span>Transformed posting from sporadic to consistent, structured content calendar</span></div>
+<div class="result-item"><span>✓</span><span>Improved engagement metrics across all social platforms</span></div>
+<div class="result-item"><span>✓</span><span>Supported research publications reaching international audiences</span></div>
+<div class="result-item"><span>✓</span><span>Built a repeatable social media framework the organization continues to use</span></div>
+</div>
+<div class="pd-section"><p class="pd-label">Tools Used</p><div class="tools-wrap"><span class="tool-tag">Meta Business Suite</span><span class="tool-tag">Instagram Analytics</span><span class="tool-tag">Google Sheets</span><span class="tool-tag">Content Scheduling</span></div></div>
+</div>
+</div>
+<div class="portfolio-item fade-in">
+<div class="portfolio-item-header" onclick="togglePortfolio(this)">
+<div class="portfolio-item-thumb" style="background:rgba(139,92,246,.15);font-size:24px;color:var(--accent2)">▶</div>
+<div class="portfolio-item-info"><span class="tag">DATA VISUALIZATION</span><h3>Data Visualization with Python Seaborn — Video Tutorial</h3><p style="color:var(--dim);font-size:13px;margin-top:4px">MABA 6311: Programming for Data Analytics — University of Minnesota (Spring 2025)</p></div>
+<span class="portfolio-arrow">▾</span>
+</div>
+<div class="portfolio-detail">
+<div style="margin-bottom:24px;border-radius:12px;overflow:hidden;aspect-ratio:16/9"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/62BQI-TWwQA" title="Seaborn Data Visualization Demo — Priya Saravanakumaran" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen style="border-radius:12px"></iframe></div>
+<div class="pd-section"><p class="pd-label">Overview</p><p style="color:var(--text);font-size:14px;line-height:1.7">A comprehensive video demonstration of Python's Seaborn library for data visualization, created as part of my graduate coursework in Programming for Data Analytics at the University of Minnesota.</p></div>
+<div class="pd-section"><p class="pd-label">What's Covered</p>
+<div class="approach-item"><span>→</span><span>Setting up Seaborn and loading datasets in Python</span></div>
+<div class="approach-item"><span>→</span><span>Creating statistical visualizations (distribution plots, heatmaps, pair plots, etc.)</span></div>
+<div class="approach-item"><span>→</span><span>Customizing chart aesthetics for professional presentation</span></div>
+<div class="approach-item"><span>→</span><span>Best practices for choosing the right visualization for your data</span></div>
+</div>
+<div class="pd-section"><p class="pd-label">Why This Matters for Clients</p><p style="color:var(--text);font-size:14px;line-height:1.7">Data visualization is how I translate complex analytics into clear, actionable insights for your business. Whether it's a marketing performance dashboard or a customer segmentation report, I use tools like Seaborn, Tableau, and Power BI to make your data easy to understand and act on.</p></div>
+<div class="pd-section"><p class="pd-label">Tools Used</p><div class="tools-wrap"><span class="tool-tag">Python</span><span class="tool-tag">Seaborn</span><span class="tool-tag">Matplotlib</span><span class="tool-tag">Pandas</span><span class="tool-tag">Jupyter Notebook</span></div></div>
+</div>
+</div>
+<div class="fade-in" style="text-align:center;margin-top:32px">
+<div class="card-static" style="padding:32px;display:inline-block">
+<p style="color:var(--text);font-size:16px;margin-bottom:16px">Have a project in mind? I'd love to hear about it.</p>
+<button class="btn btn-primary" onclick="navigateTo('contact')">Let's Work Together</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ==================== ABOUT ==================== -->
+<div class="page" id="page-about">
+<div style="padding-top:100px">
+<div style="padding:60px 32px;max-width:800px;margin:0 auto" class="about-wrap">
+<div class="fade-in"><span class="tag">ABOUT ME</span><h1 style="font-size:38px;font-weight:800;color:var(--white);margin:16px 0 32px">Hi, I'm Priya.</h1></div>
+<div class="about-top">
+<div class="fade-in" style="flex:0 0 200px"><img src="https://i.imgur.com/t2uwk9A.jpeg" alt="Priya Saravanakumaran" style="width:200px;height:240px;border-radius:16px;object-fit:cover;border:1px solid var(--img-border);transition:border-color .3s"></div>
+<div class="fade-in" style="flex:1 1 360px">
+<p style="color:var(--text);font-size:16px;line-height:1.8;margin-bottom:16px">I'm a digital marketing strategist and data analyst based in Minneapolis, Minnesota. I'm currently completing my Master's of Applied Business Analytics at the University of Minnesota, where I specialize in predictive modeling, data visualization, and marketing analytics.</p>
+<p style="color:var(--muted);font-size:16px;line-height:1.8">I started my career at the intersection of technology and communication — from building websites and managing social media to conducting research on social accountability. What I kept noticing was that most small businesses were making marketing decisions based on guesswork. I wanted to change that.</p>
+</div>
+</div>
+<div class="card-static about-card fade-in" style="padding:32px">
+<h2>My Approach</h2>
+<p style="color:var(--muted);font-size:15px;line-height:1.8">My approach is simple: every marketing dollar should be backed by data. I combine traditional digital marketing skills — SEO, content strategy, web development — with advanced analytics techniques like regression modeling, customer segmentation, and predictive forecasting. The result? Smarter campaigns, clearer ROI, and better business decisions.</p>
+</div>
+<div class="card-static about-card fade-in" style="padding:32px">
+<h2>Education & Credentials</h2>
+<div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:20px">
+<span style="font-size:24px">🎓</span>
+<div>
+<p style="color:var(--white);font-weight:600;font-size:15px">Master's of Applied Business Analytics</p>
+<p style="color:var(--accent2);font-size:14px">University of Minnesota — In Progress</p>
+<p style="color:var(--muted);font-size:13px;margin-top:4px">Coursework: Predictive Analytics, Data Visualization, Statistical Modeling, Marketing Analytics, Programming for Data Analytics</p>
+</div>
+</div>
+<p style="color:var(--dim);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px">Certifications & Skills</p>
+<div class="skills-wrap">
+<span class="skill-tag">Google Analytics</span><span class="skill-tag">SEO & Local SEO</span><span class="skill-tag">Python</span><span class="skill-tag">Seaborn</span><span class="skill-tag">SQL</span><span class="skill-tag">Tableau</span><span class="skill-tag">Power BI</span><span class="skill-tag">Social Media Marketing</span><span class="skill-tag">HubSpot</span><span class="skill-tag">Web Development</span><span class="skill-tag">Statistical Modeling</span>
+</div>
+</div>
+<div class="card-static about-card fade-in" style="padding:32px">
+<h2>Featured Work</h2>
+<p style="color:var(--muted);margin-bottom:20px">A video tutorial I created for my graduate coursework demonstrating data visualization techniques with Python's Seaborn library.</p>
+<div style="border-radius:12px;overflow:hidden;aspect-ratio:16/9"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/62BQI-TWwQA" title="Seaborn Data Visualization Demo" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen style="border-radius:12px"></iframe></div>
+<p style="color:var(--dim);font-size:13px;margin-top:12px">MABA 6311: Programming for Data Analytics — University of Minnesota, Spring 2025</p>
+</div>
+<div class="card-static about-card fade-in" style="padding:32px">
+<h2>Experience</h2>
+<div class="exp-item">
+<p style="color:var(--white);font-weight:600;font-size:15px">Social Media & Research Intern</p>
+<p style="color:var(--accent2);font-size:14px">Partners Jordan · Feb 2021 – May 2021</p>
+<p style="color:var(--muted);font-size:14px;line-height:1.6;margin-top:6px">Led social media overhaul for an international accountability organization. Analyzed engagement data, optimized content scheduling, and co-authored research papers on social accountability in the MENA region.</p>
+</div>
+<div class="exp-item">
+<p style="color:var(--white);font-weight:600;font-size:15px">Mock Trial Tech & Trials Lead</p>
+<p style="color:var(--accent2);font-size:14px">Woodbury High School · Nov 2018 – Apr 2019</p>
+<p style="color:var(--muted);font-size:14px;line-height:1.6;margin-top:6px">Provided IT support, built and maintained the team's official website, and managed technical logistics during competitions.</p>
+</div>
+</div>
+<div class="card-static fade-in" style="text-align:center;padding:40px">
+<h2 style="font-size:22px;font-weight:700;color:var(--white);margin-bottom:12px">Let's Work Together</h2>
+<p style="color:var(--muted);font-size:15px;margin-bottom:24px">I'm currently taking on new clients in the Twin Cities area.</p>
+<button class="btn btn-primary" onclick="navigateTo('contact')">Book a Free Consultation</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ==================== CONTACT ==================== -->
+<div class="page" id="page-contact">
+<div style="padding-top:100px">
+<div style="padding:60px 32px 80px;max-width:900px;margin:0 auto">
+<div class="fade-in"><span class="tag">GET IN TOUCH</span><h1 style="font-size:38px;font-weight:800;color:var(--white);margin:16px 0 12px">Let's Talk</h1><p style="color:var(--muted);font-size:16px;margin-bottom:48px;line-height:1.7;max-width:520px">Ready to grow your business with data-driven marketing? Send me a message or reach out directly — I typically respond within 24 hours.</p></div>
+<div class="contact-wrap">
+<div class="contact-form-wrap fade-in">
+<div class="card-static form-card" id="contactForm">
+<form action="https://formspree.io/f/maqdabgg" method="POST" id="contactFormEl" onsubmit="handleSubmit(event)">
+<h3>Send a Message</h3>
+<div class="form-row">
+<div style="flex:1"><label class="form-label">First Name *</label><input class="form-input" placeholder="Your first name" name="first_name" required></div>
+<div style="flex:1"><label class="form-label">Last Name</label><input class="form-input" placeholder="Your last name" name="last_name"></div>
+</div>
+<div class="form-group"><label class="form-label">Email *</label><input class="form-input" type="email" placeholder="you@example.com" name="email" required></div>
+<div class="form-group"><label class="form-label">Service Interested In</label><select class="form-select" name="service"><option value="">Select a service...</option><option>Website Design — Starter ($450)</option><option>Website Design — Growth ($950)</option><option>Website Design — Premium ($1,450–2,000)</option><option>SEO & Google Business Setup</option><option>Data & Predictive Analytics</option><option>Monthly Maintenance Plan</option><option>Not sure yet — let's discuss</option></select></div>
+<div class="form-group"><label class="form-label">Message *</label><textarea class="form-textarea" rows="4" placeholder="Tell me about your business and what you're looking for..." name="message" required></textarea></div>
+<button class="form-submit" type="submit">Send Message</button>
+</form>
+</div>
+<div class="card-static" id="successMsg" style="display:none;padding:48px;text-align:center">
+<div style="font-size:64px;margin-bottom:24px">✅</div>
+<h2 style="font-size:28px;font-weight:700;color:var(--white);margin-bottom:12px">Message Sent!</h2>
+<p style="color:var(--muted);font-size:16px">Thanks for reaching out. I'll get back to you within 24 hours.</p>
+</div>
+</div>
+<div class="contact-sidebar fade-in">
+<div class="card-static sidebar-card">
+<h3>Other Ways to Reach Me</h3>
+<div class="contact-item"><span style="font-size:20px;line-height:24px">📧</span><div><p style="color:var(--dim);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px">Email</p><p style="color:var(--text);font-size:14px">sivapriya.saravan@gmail.com</p></div></div>
+<div class="contact-item"><span style="font-size:20px;line-height:24px">📱</span><div><p style="color:var(--dim);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px">Phone</p><p style="color:var(--text);font-size:14px">612-361-9940</p></div></div>
+<div class="contact-item"><span style="font-size:20px;line-height:24px">📍</span><div><p style="color:var(--dim);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px">Location</p><p style="color:var(--text);font-size:14px">Minneapolis–St. Paul, MN</p></div></div>
+<div class="contact-item"><span style="font-size:20px;line-height:24px">💼</span><div><p style="color:var(--dim);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px">LinkedIn</p><p style="font-size:14px"><a href="https://www.linkedin.com/in/sivapriya-saravanakumaran-636b581a0" target="_blank">Connect on LinkedIn →</a></p></div></div>
+</div>
+<div class="card-static sidebar-card">
+<h3 style="font-size:16px">Prefer to Talk Directly?</h3>
+<p style="color:var(--muted);font-size:14px;line-height:1.6;margin-bottom:16px">Feel free to call or email me anytime. I typically respond within 24 hours.</p>
+<div style="display:flex;flex-direction:column;gap:10px">
+<a href="mailto:sivapriya.saravan@gmail.com" class="btn btn-primary" style="text-align:center;text-decoration:none;padding:12px 20px;font-size:14px">Email Me Directly</a>
+<a href="tel:6123619940" class="btn btn-outline" style="text-align:center;text-decoration:none;padding:12px 20px;font-size:14px">Call 612-361-9940</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+<div class="footer-inner">
+<div class="footer-col">
+<div style="display:flex;gap:10px;align-items:center;margin-bottom:12px">
+<div style="width:32px;height:32px;border-radius:8px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:#fff">P</div>
+<span style="font-weight:700;color:var(--white);font-size:15px">Priya Saravanakumaran</span>
+</div>
+<p style="color:var(--muted);font-size:13px;line-height:1.6">Digital Marketing & Analytics<br>Minneapolis–St. Paul, MN</p>
+</div>
+<div class="footer-col">
+<p class="footer-label">Pages</p>
+<a class="footer-link" onclick="navigateTo('home')">Home</a>
+<a class="footer-link" onclick="navigateTo('services')">Services</a>
+<a class="footer-link" onclick="navigateTo('pricing')">Pricing</a>
+<a class="footer-link" onclick="navigateTo('portfolio')">Portfolio</a>
+<a class="footer-link" onclick="navigateTo('about')">About</a>
+<a class="footer-link" onclick="navigateTo('contact')">Contact</a>
+</div>
+<div class="footer-col">
+<p class="footer-label">Services</p>
+<a class="footer-link" onclick="navigateTo('pricing')">Website Packages</a>
+<a class="footer-link" onclick="navigateTo('services')">SEO & Local Search</a>
+<a class="footer-link" onclick="navigateTo('services')">Data Analytics</a>
+<a class="footer-link" onclick="navigateTo('pricing')">Monthly Plans</a>
+</div>
+<div class="footer-col">
+<p class="footer-label">Connect</p>
+<p style="color:var(--muted);font-size:13px;margin-bottom:6px">sivapriya.saravan@gmail.com</p>
+<p style="color:var(--muted);font-size:13px;margin-bottom:6px">612-361-9940</p>
+<a href="https://www.linkedin.com/in/sivapriya-saravanakumaran-636b581a0" target="_blank" style="color:var(--accent2);font-size:13px;display:block;margin-top:8px">LinkedIn →</a>
+</div>
+</div>
+<div class="footer-bottom"><p style="color:var(--dim);font-size:12px">© 2025 Priya Saravanakumaran. All rights reserved. · Privacy Policy · Accessibility</p></div>
+</footer>
+
+<script>
+// Theme
+function toggleTheme(){
+const html=document.documentElement;
+const next=html.getAttribute('data-theme')==='dark'?'light':'dark';
+html.setAttribute('data-theme',next);
+try{window.themePreference=next}catch(e){}
+}
+
+// Navigation
+function navigateTo(pg){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById('page-'+pg).classList.add('active');
+document.querySelectorAll('.nav-link').forEach(l=>{l.classList.remove('active');if(l.dataset.page===pg)l.classList.add('active')});
+document.getElementById('mobileMenu').classList.remove('open');
+window.scrollTo({top:0,behavior:'smooth'});
+setTimeout(initFadeIn,100);
+}
+function toggleMobile(){document.getElementById('mobileMenu').classList.toggle('open')}
+window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>20)});
+
+// Mobile toggle visibility
+function checkMobileToggle(){
+const mt=document.getElementById('mobileToggle');
+if(window.innerWidth<=768){mt.style.display='flex'}else{mt.style.display='none'}
+}
+window.addEventListener('resize',checkMobileToggle);
+checkMobileToggle();
+
+// Portfolio accordion
+function togglePortfolio(el){
+const d=el.nextElementSibling,a=el.querySelector('.portfolio-arrow');
+const isOpen=d.classList.contains('open');
+document.querySelectorAll('.portfolio-detail').forEach(x=>x.classList.remove('open'));
+document.querySelectorAll('.portfolio-arrow').forEach(x=>x.classList.remove('open'));
+if(!isOpen){d.classList.add('open');a.classList.add('open')}
+}
+
+// Contact form
+function handleSubmit(e){
+e.preventDefault();
+const form=e.target;
+fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+.then(r=>{if(r.ok){document.getElementById('contactForm').style.display='none';document.getElementById('successMsg').style.display='block'}else{alert('Something went wrong. Please try again or email me directly.')}})
+.catch(()=>alert('Something went wrong. Please try again or email me directly.'));
+}
+
+// Fade in
+function initFadeIn(){
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1});
+document.querySelectorAll('.fade-in:not(.visible)').forEach(el=>obs.observe(el));
+}
+document.addEventListener('DOMContentLoaded',initFadeIn);
+</script>
+</body>
+</html>
