@@ -13,9 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-
-/* ===== DARK THEME (default) ===== */
-:root, [data-theme="dark"]{
+:root,[data-theme="dark"]{
 --bg:#0A0F1C;--bg2:#111827;--bg3:#1A2236;--card:#151D2E;
 --accent:#6366F1;--accent2:#818CF8;--glow:rgba(99,102,241,0.15);
 --text:#E2E8F0;--muted:#94A3B8;--dim:#64748B;--white:#F8FAFC;
@@ -28,12 +26,10 @@
 --form-bg:var(--bg);--btn-white-bg:rgba(255,255,255,.1);--btn-white-border:rgba(255,255,255,.15);--btn-white-text:var(--white);
 --featured-bg:rgba(99,102,241,.04)
 }
-
-/* ===== LIGHT THEME ===== */
 [data-theme="light"]{
 --bg:#F8FAFC;--bg2:#F1F5F9;--bg3:#E2E8F0;--card:#FFFFFF;
 --accent:#6366F1;--accent2:#4F46E5;--glow:rgba(99,102,241,0.08);
---text:#1E293B;--muted:#475569;--dim:#64748B;--white:#0F172A;
+--text:#1E293B;--muted:#475569;--dim:#6B7280;--white:#0F172A;
 --border:#E2E8F0;--grad:linear-gradient(135deg,#6366F1 0%,#7C3AED 50%,#8B5CF6 100%);
 --green:#059669;--green-glow:rgba(5,150,105,0.08);
 --amber:#D97706;--amber-glow:rgba(217,119,6,0.08);
@@ -43,20 +39,19 @@
 --form-bg:#F1F5F9;--btn-white-bg:rgba(0,0,0,.05);--btn-white-border:rgba(0,0,0,.1);--btn-white-text:#1E293B;
 --featured-bg:rgba(99,102,241,.04)
 }
-
-[data-theme="light"] .hero-glow1,
-[data-theme="light"] .hero-glow2{opacity:.4}
+[data-theme="light"] .hero-glow1,[data-theme="light"] .hero-glow2{opacity:.4}
 [data-theme="light"] .cta-glow{background:radial-gradient(ellipse at center,rgba(99,102,241,.06) 0%,transparent 70%)}
 [data-theme="light"] .nav-logo{box-shadow:0 2px 8px rgba(99,102,241,.2)}
 [data-theme="light"] .card:hover{box-shadow:0 8px 24px rgba(0,0,0,.08)}
 [data-theme="light"] .pricing-card.featured{box-shadow:0 0 40px rgba(99,102,241,.1)}
-
 html{scroll-behavior:smooth}
 body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;transition:background .3s,color .3s}
 a{color:var(--accent2);text-decoration:none;transition:opacity .2s}a:hover{opacity:.8}
+a:focus-visible,button:focus-visible,.toggle-track:focus-visible{outline:2px solid var(--accent2);outline-offset:2px;border-radius:4px}
 .page{display:none}.page.active{display:block}
-
-/* Nav */
+/* Skip link */
+.skip-link{position:absolute;top:-100px;left:16px;background:var(--grad);color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;z-index:9999;transition:top .2s}
+.skip-link:focus{top:16px}
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 32px;transition:all .3s}
 .nav.scrolled{background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:1px solid var(--nav-border)}
 .nav-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
@@ -72,16 +67,12 @@ a{color:var(--accent2);text-decoration:none;transition:opacity .2s}a:hover{opaci
 .mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:var(--nav-bg);backdrop-filter:blur(16px);padding:16px;border-bottom:1px solid var(--nav-border);z-index:999}
 .mobile-menu.open{display:flex;flex-direction:column;gap:4px}
 .mobile-menu .nav-link{width:100%;text-align:left;padding:12px 16px}
-
-/* Theme Toggle */
 .theme-toggle{display:flex;align-items:center;gap:8px;margin-left:8px}
 .toggle-track{width:52px;height:28px;border-radius:14px;background:var(--toggle-bg);position:relative;cursor:pointer;transition:background .3s;border:1px solid var(--border);flex-shrink:0}
 .toggle-knob{width:22px;height:22px;border-radius:50%;background:var(--toggle-knob);position:absolute;top:2px;left:2px;transition:transform .3s,background .3s;display:flex;align-items:center;justify-content:center;font-size:12px}
 [data-theme="light"] .toggle-knob{transform:translateX(24px)}
 .toggle-sun{font-size:14px;color:var(--toggle-icon-sun);transition:color .3s}
 .toggle-moon{font-size:14px;color:var(--toggle-icon-moon);transition:color .3s}
-
-/* Common */
 .tag{display:inline-block;background:var(--glow);color:var(--accent2);padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:.5px;transition:background .3s,color .3s}
 .tag-green{background:var(--green-glow);color:var(--green)}
 .tag-amber{background:var(--amber-glow);color:var(--amber)}
@@ -101,8 +92,6 @@ a{color:var(--accent2);text-decoration:none;transition:opacity .2s}a:hover{opaci
 .fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
 .fade-in.visible{opacity:1;transform:translateY(0)}
 .section{padding:80px 32px;transition:background .3s}.section-alt{background:var(--bg2)}
-
-/* Hero */
 .hero{min-height:100vh;display:flex;align-items:center;padding:120px 32px 80px;position:relative;overflow:hidden}
 .hero-glow1{position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.08) 0%,transparent 70%);transition:opacity .3s}
 .hero-glow2{position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.06) 0%,transparent 70%);transition:opacity .3s}
@@ -119,11 +108,10 @@ a{color:var(--accent2);text-decoration:none;transition:opacity .2s}a:hover{opaci
 .diff-check span:last-child{color:var(--text);font-size:14px;transition:color .3s}
 .portfolio-grid{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;max-width:1000px;margin:0 auto}
 .portfolio-card{flex:1 1 280px;max-width:400px;border-radius:16px;overflow:hidden;cursor:pointer}
-.portfolio-thumb{height:160px;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:13px}
+.portfolio-thumb{height:160px;display:flex;align-items:center;justify-content:center;font-size:13px;position:relative;overflow:hidden}
 .portfolio-card-body{padding:24px}
 .portfolio-card-body h3{font-size:16px;font-weight:700;color:var(--white);margin-bottom:8px;transition:color .3s}
 .portfolio-card-body p{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px}
-.testimonial-card{max-width:640px;margin:0 auto;padding:40px;text-align:center}
 .process-grid{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;max-width:900px;margin:0 auto}
 .process-step{flex:1 1 240px;max-width:260px;text-align:center}
 .process-num{width:56px;height:56px;border-radius:16px;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:22px;font-weight:700}
@@ -138,7 +126,7 @@ a{color:var(--accent2);text-decoration:none;transition:opacity .2s}a:hover{opaci
 .svc-check span:last-child{color:var(--text);font-size:14px;transition:color .3s}
 .portfolio-item{background:var(--card);border-radius:16px;border:1px solid var(--border);margin-bottom:24px;overflow:hidden;transition:background .3s,border-color .3s}
 .portfolio-item-header{padding:32px;cursor:pointer;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
-.portfolio-item-thumb{width:80px;height:80px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--dim)}
+.portfolio-item-thumb{width:80px;height:80px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:32px}
 .portfolio-item-info{flex:1}
 .portfolio-item-info h3{font-size:20px;font-weight:700;color:var(--white);margin-top:8px;transition:color .3s}
 .portfolio-arrow{color:var(--accent2);font-size:24px;transition:transform .3s}
@@ -183,8 +171,6 @@ a{color:var(--accent2);text-decoration:none;transition:opacity .2s}a:hover{opaci
 .footer-link{color:var(--muted);font-size:13px;margin-bottom:8px;cursor:pointer;display:block;transition:color .2s}
 .footer-link:hover{color:var(--accent2)}
 .footer-bottom{border-top:1px solid var(--border);padding-top:20px;text-align:center;max-width:1000px;margin:0 auto}
-
-/* Pricing */
 .pricing-grid{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;max-width:1100px;margin:0 auto}
 .pricing-card{flex:1 1 300px;max-width:340px;padding:0;position:relative;overflow:hidden}
 .pricing-card.featured{border-color:var(--accent);box-shadow:0 0 40px rgba(99,102,241,.15)}
@@ -214,7 +200,17 @@ a{color:var(--accent2);text-decoration:none;transition:opacity .2s}a:hover{opaci
 .why-icon{font-size:28px;margin-bottom:12px}
 .why-card h4{font-size:15px;font-weight:700;color:var(--white);margin-bottom:8px;transition:color .3s}
 .why-card p{font-size:13px;color:var(--muted);line-height:1.6;transition:color .3s}
-
+.faq-grid{max-width:800px;margin:0 auto}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:12px;overflow:hidden;transition:background .3s,border-color .3s}
+.faq-q{padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;background:none;border:none;width:100%;text-align:left;font-family:inherit;color:inherit}
+.faq-q h4{font-size:15px;font-weight:600;color:var(--white);transition:color .3s}
+.faq-arrow{color:var(--accent2);font-size:18px;transition:transform .3s;flex-shrink:0}
+.faq-arrow.open{transform:rotate(180deg)}
+.faq-a{padding:0 24px 20px;display:none}
+.faq-a.open{display:block}
+.faq-a p{color:var(--muted);font-size:14px;line-height:1.7}
+/* Visually hidden for screen readers */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(max-width:768px){
 .nav-links{display:none}.hamburger{display:flex}
 .theme-toggle-desktop{display:none!important}
@@ -232,13 +228,15 @@ a{color:var(--accent2);text-decoration:none;transition:opacity .2s}a:hover{opaci
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="nav" id="navbar">
+<!-- Skip to main content -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav class="nav" id="navbar" role="navigation" aria-label="Main navigation">
 <div class="nav-inner">
-<div class="nav-brand" onclick="navigateTo('home')">
-<div class="nav-logo">P</div>
+<button class="nav-brand" onclick="navigateTo('home')" aria-label="Go to homepage" style="background:none;border:none;cursor:pointer">
+<div class="nav-logo" aria-hidden="true">P</div>
 <span class="nav-name">Priya Saravanakumaran</span>
-</div>
+</button>
 <div class="nav-links">
 <button class="nav-link active" data-page="home" onclick="navigateTo('home')">Home</button>
 <button class="nav-link" data-page="services" onclick="navigateTo('services')">Services</button>
@@ -247,39 +245,36 @@ a{color:var(--accent2);text-decoration:none;transition:opacity .2s}a:hover{opaci
 <button class="nav-link" data-page="about" onclick="navigateTo('about')">About</button>
 <button class="nav-link nav-contact" data-page="contact" onclick="navigateTo('contact')">Contact</button>
 <div class="theme-toggle theme-toggle-desktop" style="margin-left:8px">
-<span class="toggle-sun">☀️</span>
-<div class="toggle-track" onclick="toggleTheme()" aria-label="Toggle light/dark mode" role="button" tabindex="0">
-<div class="toggle-knob"></div>
-</div>
-<span class="toggle-moon">🌙</span>
+<span class="toggle-sun" aria-hidden="true">☀️</span>
+<div class="toggle-track" onclick="toggleTheme()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleTheme()}" aria-label="Toggle light and dark mode" role="switch" aria-checked="false" tabindex="0"><div class="toggle-knob"></div></div>
+<span class="toggle-moon" aria-hidden="true">🌙</span>
 </div>
 </div>
 <div style="display:flex;align-items:center;gap:8px">
 <div class="theme-toggle" id="mobileToggle" style="display:none">
-<span class="toggle-sun">☀️</span>
-<div class="toggle-track" onclick="toggleTheme()" aria-label="Toggle light/dark mode" role="button" tabindex="0">
-<div class="toggle-knob"></div>
+<span class="toggle-sun" aria-hidden="true">☀️</span>
+<div class="toggle-track" onclick="toggleTheme()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleTheme()}" aria-label="Toggle light and dark mode" role="switch" aria-checked="false" tabindex="0"><div class="toggle-knob"></div></div>
+<span class="toggle-moon" aria-hidden="true">🌙</span>
 </div>
-<span class="toggle-moon">🌙</span>
-</div>
-<button class="hamburger" onclick="toggleMobile()" aria-label="Menu"><span></span><span></span><span></span></button>
+<button class="hamburger" onclick="toggleMobile()" aria-label="Open menu" aria-expanded="false" id="hamburgerBtn"><span></span><span></span><span></span></button>
 </div>
 </div>
 </nav>
-<div class="mobile-menu" id="mobileMenu">
-<button class="nav-link" onclick="navigateTo('home')">Home</button>
-<button class="nav-link" onclick="navigateTo('services')">Services</button>
-<button class="nav-link" onclick="navigateTo('pricing')">Pricing</button>
-<button class="nav-link" onclick="navigateTo('portfolio')">Portfolio</button>
-<button class="nav-link" onclick="navigateTo('about')">About</button>
-<button class="nav-link" onclick="navigateTo('contact')">Contact</button>
+<div class="mobile-menu" id="mobileMenu" role="menu" aria-label="Mobile navigation">
+<button class="nav-link" role="menuitem" onclick="navigateTo('home')">Home</button>
+<button class="nav-link" role="menuitem" onclick="navigateTo('services')">Services</button>
+<button class="nav-link" role="menuitem" onclick="navigateTo('pricing')">Pricing</button>
+<button class="nav-link" role="menuitem" onclick="navigateTo('portfolio')">Portfolio</button>
+<button class="nav-link" role="menuitem" onclick="navigateTo('about')">About</button>
+<button class="nav-link" role="menuitem" onclick="navigateTo('contact')">Contact</button>
 </div>
 
-<!-- ==================== HOME ==================== -->
-<div class="page active" id="page-home">
+<main id="main-content">
 
-<section class="hero">
-<div class="hero-glow1"></div><div class="hero-glow2"></div>
+<!-- HOME -->
+<div class="page active" id="page-home">
+<section class="hero" aria-label="Introduction">
+<div class="hero-glow1" aria-hidden="true"></div><div class="hero-glow2" aria-hidden="true"></div>
 <div class="hero-inner">
 <div class="hero-text">
 <div class="fade-in"><span class="tag">MINNEAPOLIS–ST. PAUL, MN</span></div>
@@ -291,8 +286,8 @@ a{color:var(--accent2);text-decoration:none;transition:opacity .2s}a:hover{opaci
 </div>
 <div class="fade-in" style="display:flex;gap:32px;margin-top:48px">
 <div><div style="font-size:20px;font-weight:700;color:var(--accent2)">UMN</div><div style="font-size:12px;color:var(--dim);margin-top:2px">Master's Analytics</div></div>
-<div><div style="font-size:20px;font-weight:700;color:var(--accent2)">5+</div><div style="font-size:12px;color:var(--dim);margin-top:2px">Services</div></div>
-<div><div style="font-size:20px;font-weight:700;color:var(--accent2)">Twin Cities</div><div style="font-size:12px;color:var(--dim);margin-top:2px">Based</div></div>
+<div><div style="font-size:20px;font-weight:700;color:var(--accent2)">Data + Marketing</div><div style="font-size:12px;color:var(--dim);margin-top:2px">Full-Stack Approach</div></div>
+<div><div style="font-size:20px;font-weight:700;color:var(--accent2)">Twin Cities</div><div style="font-size:12px;color:var(--dim);margin-top:2px">Based & Local</div></div>
 </div>
 </div>
 <div class="fade-in" style="flex:0 0 300px;display:flex;justify-content:center">
@@ -301,8 +296,7 @@ a{color:var(--accent2);text-decoration:none;transition:opacity .2s}a:hover{opaci
 </div>
 </section>
 
-<!-- Empathy -->
-<section class="section">
+<section class="section" aria-label="The challenge">
 <div style="max-width:700px;margin:0 auto;text-align:center">
 <div class="fade-in section-title"><span class="tag">THE CHALLENGE</span><h2>Your Marketing Should Work as Hard as You Do</h2></div>
 <div class="fade-in"><p style="color:var(--muted);font-size:16px;line-height:1.8;margin-bottom:16px">You've built something real — a business that serves your community. But between running operations, managing staff, and keeping customers happy, marketing keeps falling to the bottom of the list.</p></div>
@@ -311,102 +305,86 @@ a{color:var(--accent2);text-decoration:none;transition:opacity .2s}a:hover{opaci
 </div>
 </section>
 
-<!-- Services Preview -->
-<section class="section section-alt">
+<section class="section section-alt" aria-label="Services overview">
 <div class="fade-in section-title"><span class="tag">SERVICES</span><h2>How I Can Help</h2><p>End-to-end marketing and analytics services designed for Twin Cities small businesses.</p></div>
 <div class="services-grid">
-<div class="card service-card fade-in" onclick="navigateTo('services')">
-<div style="font-size:36px;margin-bottom:16px">🎯</div>
+<button class="card service-card fade-in" onclick="navigateTo('services')" aria-label="Learn more about Digital Marketing and SEO">
+<div aria-hidden="true" style="font-size:36px;margin-bottom:16px">🎯</div>
 <h3 style="font-size:18px;font-weight:700;color:var(--white);margin-bottom:12px">Digital Marketing & SEO</h3>
 <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:16px">Integrated marketing strategy and search engine optimization to help Twin Cities customers find you on Google — and keep coming back.</p>
-<a onclick="navigateTo('services')" style="font-weight:600;font-size:14px;cursor:pointer">Learn More →</a>
-</div>
-<div class="card service-card fade-in" onclick="navigateTo('services')">
-<div style="font-size:36px;margin-bottom:16px">💻</div>
+<span style="font-weight:600;font-size:14px;color:var(--accent2)">Learn More →</span>
+</button>
+<button class="card service-card fade-in" onclick="navigateTo('services')" aria-label="Learn more about Website Design and Development">
+<div aria-hidden="true" style="font-size:36px;margin-bottom:16px">💻</div>
 <h3 style="font-size:18px;font-weight:700;color:var(--white);margin-bottom:12px">Website Design & Development</h3>
 <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:16px">Modern, mobile-first websites built to load fast, rank well, and turn visitors into customers.</p>
-<a onclick="navigateTo('services')" style="font-weight:600;font-size:14px;cursor:pointer">Learn More →</a>
-</div>
-<div class="card service-card fade-in" onclick="navigateTo('services')">
-<div style="font-size:36px;margin-bottom:16px">📊</div>
+<span style="font-weight:600;font-size:14px;color:var(--accent2)">Learn More →</span>
+</button>
+<button class="card service-card fade-in" onclick="navigateTo('services')" aria-label="Learn more about Data and Predictive Analytics">
+<div aria-hidden="true" style="font-size:36px;margin-bottom:16px">📊</div>
 <h3 style="font-size:18px;font-weight:700;color:var(--white);margin-bottom:12px">Data & Predictive Analytics</h3>
 <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:16px">Transform your business data into clear dashboards and actionable insights with predictive models that forecast what's next.</p>
-<a onclick="navigateTo('services')" style="font-weight:600;font-size:14px;cursor:pointer">Learn More →</a>
-</div>
+<span style="font-weight:600;font-size:14px;color:var(--accent2)">Learn More →</span>
+</button>
 </div>
 </section>
 
-<!-- Differentiator -->
-<section class="section">
+<section class="section" aria-label="Why choose me">
 <div class="diff-wrap">
 <div class="diff-text fade-in">
 <span class="tag">WHY ME</span>
 <h2 style="font-size:30px;font-weight:700;color:var(--white);margin:16px 0;line-height:1.3">Marketing Expertise Meets Data Science</h2>
 <p style="color:var(--muted);line-height:1.7;margin-bottom:16px">Most marketers rely on best practices and intuition. I bring something different.</p>
 <p style="color:var(--muted);line-height:1.7;margin-bottom:24px">I'm currently completing my Master's of Applied Business Analytics at the University of Minnesota — one of the top programs in the country for data-driven decision making. Every strategy I build is informed by statistical modeling, predictive analytics, and rigorous data analysis.</p>
-<div class="diff-check"><span>✓</span><span>Master's of Applied Business Analytics — University of Minnesota (in progress)</span></div>
-<div class="diff-check"><span>✓</span><span>Predictive modeling, customer segmentation & data visualization</span></div>
-<div class="diff-check"><span>✓</span><span>SEO, social media strategy, web development & research</span></div>
-<div class="diff-check"><span>✓</span><span>Minneapolis–St. Paul, working with Twin Cities businesses</span></div>
+<div class="diff-check"><span aria-hidden="true">✓</span><span>Master's of Applied Business Analytics — University of Minnesota (in progress)</span></div>
+<div class="diff-check"><span aria-hidden="true">✓</span><span>Predictive modeling, customer segmentation & data visualization</span></div>
+<div class="diff-check"><span aria-hidden="true">✓</span><span>SEO, social media strategy, web development & research</span></div>
+<div class="diff-check"><span aria-hidden="true">✓</span><span>Minneapolis–St. Paul, working with Twin Cities businesses</span></div>
 <div style="margin-top:24px"><button class="btn btn-outline" onclick="navigateTo('about')">Learn More About My Background →</button></div>
 </div>
 <div class="fade-in" style="flex:0 0 280px;display:flex;justify-content:center">
-<img src="https://i.imgur.com/t2uwk9A.jpeg" alt="Priya Saravanakumaran, UMN analytics student" style="width:260px;height:220px;border-radius:16px;object-fit:cover;object-position:center top;border:1px solid var(--img-border);transition:border-color .3s">
+<img src="https://i.imgur.com/t2uwk9A.jpeg" alt="Priya working on analytics" style="width:260px;height:220px;border-radius:16px;object-fit:cover;object-position:center top;border:1px solid var(--img-border);transition:border-color .3s">
 </div>
 </div>
 </section>
 
-<!-- Portfolio Preview -->
-<section class="section section-alt">
+<section class="section section-alt" aria-label="Portfolio preview">
 <div class="fade-in section-title"><span class="tag">PORTFOLIO</span><h2>Selected Projects</h2><p>Here's how I've applied marketing strategy and analytics to solve real business challenges.</p></div>
 <div class="portfolio-grid">
-<div class="card portfolio-card fade-in" onclick="navigateTo('portfolio')">
-<div class="portfolio-thumb" style="background:rgba(99,102,241,.1)">Project Thumbnail</div>
+<button class="card portfolio-card fade-in" onclick="navigateTo('portfolio')" aria-label="View nonprofit social media case study" style="border:none;text-align:left;cursor:pointer;font-family:inherit">
+<div class="portfolio-thumb" style="background:linear-gradient(135deg,rgba(99,102,241,.15),rgba(139,92,246,.1))">
+<div style="text-align:center;padding:20px"><div aria-hidden="true" style="font-size:36px;margin-bottom:8px">📱</div><div style="font-size:12px;color:var(--accent2);font-weight:600;letter-spacing:.5px">SOCIAL MEDIA STRATEGY</div></div>
+</div>
 <div class="portfolio-card-body">
 <h3>Nonprofit Social Media Overhaul</h3>
 <p>Rebuilt social media strategy for an international organization, increasing engagement and streamlining operations.</p>
 <span style="color:var(--accent2);font-weight:600;font-size:13px">View Case Study →</span>
 </div>
+</button>
+<button class="card portfolio-card fade-in" onclick="navigateTo('portfolio')" aria-label="View Seaborn data visualization case study" style="border:none;text-align:left;cursor:pointer;font-family:inherit">
+<div class="portfolio-thumb" style="background:linear-gradient(135deg,rgba(139,92,246,.15),rgba(99,102,241,.1))">
+<div style="text-align:center;padding:20px"><div aria-hidden="true" style="font-size:36px;margin-bottom:8px">📊</div><div style="font-size:12px;color:var(--accent2);font-weight:600;letter-spacing:.5px">DATA VISUALIZATION</div></div>
 </div>
-<div class="card portfolio-card fade-in" onclick="navigateTo('portfolio')">
-<div class="portfolio-thumb" style="background:rgba(139,92,246,.15);font-size:32px;color:var(--accent2)">▶</div>
 <div class="portfolio-card-body">
 <h3>Seaborn Data Visualization Tutorial</h3>
 <p>Video demo of Python data visualization techniques — created for UMN's Programming for Data Analytics course.</p>
 <span style="color:var(--accent2);font-weight:600;font-size:13px">View Case Study →</span>
 </div>
-</div>
-</div>
-</section>
-
-<!-- Testimonial -->
-<section class="section">
-<div class="fade-in">
-<div class="section-title"><span class="tag">TESTIMONIALS</span><h2>What People Are Saying</h2></div>
-<div class="card-static testimonial-card">
-<div style="font-size:56px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:12px">"</div>
-<p style="font-size:17px;color:var(--text);font-style:italic;line-height:1.8;margin-bottom:24px">Priya has a rare combination of creative marketing instinct and rigorous analytical thinking. She doesn't just execute — she understands why a strategy should work and measures whether it does.</p>
-<div style="width:48px;height:48px;border-radius:50%;background:var(--glow);margin:0 auto 8px;display:flex;align-items:center;justify-content:center;color:var(--accent2);font-weight:700;font-size:14px">PS</div>
-<p style="font-weight:600;color:var(--white);font-size:15px">Your Name Here</p>
-<p style="color:var(--dim);font-size:13px">Title, Organization</p>
-</div>
-<p style="text-align:center;margin-top:12px;font-size:12px;color:var(--dim);font-style:italic">Replace with a real testimonial from a professor, supervisor, or client</p>
+</button>
 </div>
 </section>
 
-<!-- Process -->
-<section class="section section-alt">
+<section class="section section-alt" aria-label="Process">
 <div class="fade-in section-title"><span class="tag">PROCESS</span><h2>Getting Started Is Simple</h2></div>
 <div class="process-grid">
-<div class="process-step fade-in"><div class="process-num">1</div><h3 style="font-size:17px;font-weight:700;color:var(--white);margin-bottom:8px">Book a Free Call</h3><p style="font-size:14px;color:var(--muted);line-height:1.6">Schedule a 30-minute strategy session. We'll discuss your goals, current marketing, and where data can make the biggest impact.</p></div>
-<div class="process-step fade-in"><div class="process-num">2</div><h3 style="font-size:17px;font-weight:700;color:var(--white);margin-bottom:8px">Get a Custom Plan</h3><p style="font-size:14px;color:var(--muted);line-height:1.6">I'll audit your digital presence and deliver a tailored strategy — with clear priorities, timelines, and expected outcomes.</p></div>
-<div class="process-step fade-in"><div class="process-num">3</div><h3 style="font-size:17px;font-weight:700;color:var(--white);margin-bottom:8px">Grow With Confidence</h3><p style="font-size:14px;color:var(--muted);line-height:1.6">We execute together, track results in real time, and adjust based on what the data tells us. No guesswork — just growth.</p></div>
+<div class="process-step fade-in"><div class="process-num" aria-hidden="true">1</div><h3 style="font-size:17px;font-weight:700;color:var(--white);margin-bottom:8px">Book a Free Call</h3><p style="font-size:14px;color:var(--muted);line-height:1.6">Schedule a 30-minute strategy session. We'll discuss your goals, current marketing, and where data can make the biggest impact.</p></div>
+<div class="process-step fade-in"><div class="process-num" aria-hidden="true">2</div><h3 style="font-size:17px;font-weight:700;color:var(--white);margin-bottom:8px">Get a Custom Plan</h3><p style="font-size:14px;color:var(--muted);line-height:1.6">I'll audit your digital presence and deliver a tailored strategy — with clear priorities, timelines, and expected outcomes.</p></div>
+<div class="process-step fade-in"><div class="process-num" aria-hidden="true">3</div><h3 style="font-size:17px;font-weight:700;color:var(--white);margin-bottom:8px">Grow With Confidence</h3><p style="font-size:14px;color:var(--muted);line-height:1.6">We execute together, track results in real time, and adjust based on what the data tells us. No guesswork — just growth.</p></div>
 </div>
 </section>
 
-<!-- CTA -->
-<section class="section cta-section">
-<div class="cta-glow"></div>
+<section class="section cta-section" aria-label="Call to action">
+<div class="cta-glow" aria-hidden="true"></div>
 <div class="fade-in" style="position:relative">
 <h2 style="font-size:32px;font-weight:700;color:var(--white);margin-bottom:16px">Ready to Make Data Work for Your Business?</h2>
 <p style="color:var(--muted);font-size:16px;max-width:500px;margin:0 auto 32px">Whether you need a new website, a smarter SEO strategy, or analytics that finally make sense — let's talk. Your first consultation is free.</p>
@@ -414,12 +392,12 @@ a{color:var(--accent2);text-decoration:none;transition:opacity .2s}a:hover{opaci
 <button class="btn btn-primary" onclick="navigateTo('contact')">Book Your Free Strategy Call</button>
 <button class="btn btn-white" onclick="navigateTo('pricing')">View Pricing</button>
 </div>
-<p style="color:var(--dim);font-size:13px;margin-top:16px">Or email me at sivapriya.saravan@gmail.com</p>
+<p style="color:var(--dim);font-size:13px;margin-top:16px">Or email me at <a href="mailto:sivapriya.saravan@gmail.com">sivapriya.saravan@gmail.com</a></p>
 </div>
 </section>
 </div>
 
-<!-- ==================== SERVICES ==================== -->
+<!-- SERVICES -->
 <div class="page" id="page-services">
 <div style="padding-top:100px">
 <div style="padding:60px 32px 40px;text-align:center">
@@ -428,64 +406,73 @@ a{color:var(--accent2);text-decoration:none;transition:opacity .2s}a:hover{opaci
 <div class="fade-in"><p style="color:var(--muted);font-size:16px;max-width:560px;margin:0 auto;line-height:1.7">End-to-end marketing and analytics services designed for Twin Cities small businesses. Every engagement starts with a free consultation.</p></div>
 </div>
 
-<div class="svc-detail"><div style="max-width:800px;margin:0 auto" class="fade-in">
-<div class="svc-header"><span style="font-size:32px">🎯</span><div><span class="tag">STRATEGY</span><h2 style="font-size:24px;font-weight:700;color:var(--white);margin-top:8px">Digital Marketing Strategy</h2></div></div>
+<section class="svc-detail" aria-label="Digital Marketing Strategy">
+<div style="max-width:800px;margin:0 auto" class="fade-in">
+<div class="svc-header"><span aria-hidden="true" style="font-size:32px">🎯</span><div><span class="tag">STRATEGY</span><h2 style="font-size:24px;font-weight:700;color:var(--white);margin-top:8px">Digital Marketing Strategy</h2></div></div>
 <p style="color:var(--accent2);font-size:17px;font-weight:500;margin-bottom:16px;line-height:1.6">Stop guessing. Start growing with marketing campaigns built on data and designed for results.</p>
 <p style="color:var(--muted);font-size:15px;line-height:1.7;margin-bottom:16px">I build integrated marketing strategies that connect your business goals to the right channels — search, social, email, and paid media. Every campaign comes with clear KPIs, so you always know what's working and what needs adjusting.</p>
 <div class="svc-box"><p class="svc-box-label">Ideal For</p><p style="color:var(--text);font-size:14px;line-height:1.6">Twin Cities small businesses and startups that want to grow their customer base but aren't sure where to invest their marketing budget.</p></div>
-<div class="svc-box"><p class="svc-box-label">What's Included</p><div class="svc-check"><span>✓</span><span>Marketing audit & competitive analysis</span></div><div class="svc-check"><span>✓</span><span>Channel strategy (SEO, social, email, paid)</span></div><div class="svc-check"><span>✓</span><span>Campaign planning with KPI framework</span></div><div class="svc-check"><span>✓</span><span>Monthly performance reporting & optimization</span></div></div>
+<div class="svc-box"><p class="svc-box-label">What's Included</p><div class="svc-check"><span aria-hidden="true">✓</span><span>Marketing audit & competitive analysis</span></div><div class="svc-check"><span aria-hidden="true">✓</span><span>Channel strategy (SEO, social, email, paid)</span></div><div class="svc-check"><span aria-hidden="true">✓</span><span>Campaign planning with KPI framework</span></div><div class="svc-check"><span aria-hidden="true">✓</span><span>Monthly performance reporting & optimization</span></div></div>
 <button class="btn btn-primary" onclick="navigateTo('pricing')">View Pricing →</button>
-</div></div>
+</div>
+</section>
 
-<div class="svc-detail section-alt"><div style="max-width:800px;margin:0 auto" class="fade-in">
-<div class="svc-header"><span style="font-size:32px">🔍</span><div><span class="tag">SEO</span><h2 style="font-size:24px;font-weight:700;color:var(--white);margin-top:8px">Search Engine Optimization</h2></div></div>
+<section class="svc-detail section-alt" aria-label="Search Engine Optimization">
+<div style="max-width:800px;margin:0 auto" class="fade-in">
+<div class="svc-header"><span aria-hidden="true" style="font-size:32px">🔍</span><div><span class="tag">SEO</span><h2 style="font-size:24px;font-weight:700;color:var(--white);margin-top:8px">Search Engine Optimization</h2></div></div>
 <p style="color:var(--accent2);font-size:17px;font-weight:500;margin-bottom:16px;line-height:1.6">Get found when Twin Cities customers search for your services. Rank higher. Get more traffic. Win more business.</p>
 <p style="color:var(--muted);font-size:15px;line-height:1.7;margin-bottom:16px">I specialize in local SEO for Minneapolis–St. Paul businesses. From technical audits to content optimization to Google Business Profile setup, I make sure your business shows up where your customers are searching.</p>
 <div class="svc-box"><p class="svc-box-label">Ideal For</p><p style="color:var(--text);font-size:14px;line-height:1.6">Local businesses that rely on customers finding them through Google — restaurants, law firms, home services, healthcare, retail, and professional services.</p></div>
-<div class="svc-box"><p class="svc-box-label">What's Included</p><div class="svc-check"><span>✓</span><span>Technical SEO audit & fixes</span></div><div class="svc-check"><span>✓</span><span>Keyword research & local keyword strategy</span></div><div class="svc-check"><span>✓</span><span>On-page optimization (titles, metas, headers, content)</span></div><div class="svc-check"><span>✓</span><span>Google Business Profile setup & optimization</span></div><div class="svc-check"><span>✓</span><span>Local citation building & review strategy</span></div><div class="svc-check"><span>✓</span><span>Monthly ranking & traffic reports</span></div></div>
+<div class="svc-box"><p class="svc-box-label">What's Included</p><div class="svc-check"><span aria-hidden="true">✓</span><span>Technical SEO audit & fixes</span></div><div class="svc-check"><span aria-hidden="true">✓</span><span>Keyword research & local keyword strategy</span></div><div class="svc-check"><span aria-hidden="true">✓</span><span>On-page optimization (titles, metas, headers, content)</span></div><div class="svc-check"><span aria-hidden="true">✓</span><span>Google Business Profile setup & optimization</span></div><div class="svc-check"><span aria-hidden="true">✓</span><span>Local citation building & review strategy</span></div><div class="svc-check"><span aria-hidden="true">✓</span><span>Monthly ranking & traffic reports</span></div></div>
 <button class="btn btn-primary" onclick="navigateTo('pricing')">View Pricing →</button>
-</div></div>
+</div>
+</section>
 
-<div class="svc-detail"><div style="max-width:800px;margin:0 auto" class="fade-in">
-<div class="svc-header"><span style="font-size:32px">💻</span><div><span class="tag">WEB DEV</span><h2 style="font-size:24px;font-weight:700;color:var(--white);margin-top:8px">Website Design & Development</h2></div></div>
+<section class="svc-detail" aria-label="Website Design and Development">
+<div style="max-width:800px;margin:0 auto" class="fade-in">
+<div class="svc-header"><span aria-hidden="true" style="font-size:32px">💻</span><div><span class="tag">WEB DEV</span><h2 style="font-size:24px;font-weight:700;color:var(--white);margin-top:8px">Website Design & Development</h2></div></div>
 <p style="color:var(--accent2);font-size:17px;font-weight:500;margin-bottom:16px;line-height:1.6">Your website is your hardest-working employee. Make sure it's doing its job.</p>
 <p style="color:var(--muted);font-size:15px;line-height:1.7;margin-bottom:16px">I design and build modern, mobile-first websites that look professional, load fast, and are optimized for search engines from day one. Whether you need a brand-new site or a redesign, I focus on turning visitors into customers.</p>
 <div class="svc-box"><p class="svc-box-label">Ideal For</p><p style="color:var(--text);font-size:14px;line-height:1.6">Businesses that need a new website, a redesign, or landing pages for specific campaigns. Especially those whose current site is outdated, slow, or not generating leads.</p></div>
-<div class="svc-box"><p class="svc-box-label">What's Included</p><div class="svc-check"><span>✓</span><span>Custom website design & development</span></div><div class="svc-check"><span>✓</span><span>Mobile-responsive, fast-loading builds</span></div><div class="svc-check"><span>✓</span><span>SEO-optimized structure from the start</span></div><div class="svc-check"><span>✓</span><span>Contact forms, booking integrations, CTAs</span></div><div class="svc-check"><span>✓</span><span>Basic analytics setup (GA4, Search Console)</span></div></div>
+<div class="svc-box"><p class="svc-box-label">What's Included</p><div class="svc-check"><span aria-hidden="true">✓</span><span>Custom website design & development</span></div><div class="svc-check"><span aria-hidden="true">✓</span><span>Mobile-responsive, fast-loading builds</span></div><div class="svc-check"><span aria-hidden="true">✓</span><span>SEO-optimized structure from the start</span></div><div class="svc-check"><span aria-hidden="true">✓</span><span>Contact forms, booking integrations, CTAs</span></div><div class="svc-check"><span aria-hidden="true">✓</span><span>Basic analytics setup (GA4, Search Console)</span></div></div>
 <button class="btn btn-primary" onclick="navigateTo('pricing')">View Pricing →</button>
-</div></div>
+</div>
+</section>
 
-<div class="svc-detail section-alt"><div style="max-width:800px;margin:0 auto" class="fade-in">
-<div class="svc-header"><span style="font-size:32px">📊</span><div><span class="tag">ANALYTICS</span><h2 style="font-size:24px;font-weight:700;color:var(--white);margin-top:8px">Business Data Analytics</h2></div></div>
+<section class="svc-detail section-alt" aria-label="Business Data Analytics">
+<div style="max-width:800px;margin:0 auto" class="fade-in">
+<div class="svc-header"><span aria-hidden="true" style="font-size:32px">📊</span><div><span class="tag">ANALYTICS</span><h2 style="font-size:24px;font-weight:700;color:var(--white);margin-top:8px">Business Data Analytics</h2></div></div>
 <p style="color:var(--accent2);font-size:17px;font-weight:500;margin-bottom:16px;line-height:1.6">You have the data. I'll turn it into decisions.</p>
 <p style="color:var(--muted);font-size:15px;line-height:1.7;margin-bottom:16px">I help businesses make sense of their data by building clear, visual dashboards and reports that highlight what matters. Whether it's sales trends, customer demographics, or marketing performance — I translate numbers into actions.</p>
 <div class="svc-box"><p class="svc-box-label">Ideal For</p><p style="color:var(--text);font-size:14px;line-height:1.6">Businesses that collect data (through their website, CRM, POS system, or spreadsheets) but aren't using it to make decisions.</p></div>
-<div class="svc-box"><p class="svc-box-label">What's Included</p><div class="svc-check"><span>✓</span><span>Data audit & cleaning</span></div><div class="svc-check"><span>✓</span><span>Custom dashboard creation (Tableau, Power BI, or Google Data Studio)</span></div><div class="svc-check"><span>✓</span><span>KPI identification & tracking framework</span></div><div class="svc-check"><span>✓</span><span>Monthly or quarterly business intelligence reports</span></div></div>
+<div class="svc-box"><p class="svc-box-label">What's Included</p><div class="svc-check"><span aria-hidden="true">✓</span><span>Data audit & cleaning</span></div><div class="svc-check"><span aria-hidden="true">✓</span><span>Custom dashboard creation (Tableau, Power BI, or Google Data Studio)</span></div><div class="svc-check"><span aria-hidden="true">✓</span><span>KPI identification & tracking framework</span></div><div class="svc-check"><span aria-hidden="true">✓</span><span>Monthly or quarterly business intelligence reports</span></div></div>
 <button class="btn btn-primary" onclick="navigateTo('pricing')">View Pricing →</button>
-</div></div>
+</div>
+</section>
 
-<div class="svc-detail"><div style="max-width:800px;margin:0 auto" class="fade-in">
-<div class="svc-header"><span style="font-size:32px">🔮</span><div><span class="tag">PREDICTIVE</span><h2 style="font-size:24px;font-weight:700;color:var(--white);margin-top:8px">Predictive Analytics</h2></div></div>
+<section class="svc-detail" aria-label="Predictive Analytics">
+<div style="max-width:800px;margin:0 auto" class="fade-in">
+<div class="svc-header"><span aria-hidden="true" style="font-size:32px">🔮</span><div><span class="tag">PREDICTIVE</span><h2 style="font-size:24px;font-weight:700;color:var(--white);margin-top:8px">Predictive Analytics</h2></div></div>
 <p style="color:var(--accent2);font-size:17px;font-weight:500;margin-bottom:16px;line-height:1.6">Don't just understand what happened — forecast what's coming next.</p>
 <p style="color:var(--muted);font-size:15px;line-height:1.7;margin-bottom:16px">Using machine learning and statistical modeling techniques from my UMN Master's program, I build predictive models that help businesses forecast sales, anticipate customer behavior, and optimize marketing spend before committing budget.</p>
 <div class="svc-box"><p class="svc-box-label">Ideal For</p><p style="color:var(--text);font-size:14px;line-height:1.6">Growth-stage businesses that want to move from reactive to proactive decision-making. Especially valuable for e-commerce, subscription services, and businesses with repeat customers.</p></div>
-<div class="svc-box"><p class="svc-box-label">What's Included</p><div class="svc-check"><span>✓</span><span>Customer churn prediction models</span></div><div class="svc-check"><span>✓</span><span>Sales & demand forecasting</span></div><div class="svc-check"><span>✓</span><span>Customer segmentation & targeting</span></div><div class="svc-check"><span>✓</span><span>Marketing mix modeling & ROI prediction</span></div><div class="svc-check"><span>✓</span><span>Clear, non-technical reports with actionable recommendations</span></div></div>
+<div class="svc-box"><p class="svc-box-label">What's Included</p><div class="svc-check"><span aria-hidden="true">✓</span><span>Customer churn prediction models</span></div><div class="svc-check"><span aria-hidden="true">✓</span><span>Sales & demand forecasting</span></div><div class="svc-check"><span aria-hidden="true">✓</span><span>Customer segmentation & targeting</span></div><div class="svc-check"><span aria-hidden="true">✓</span><span>Marketing mix modeling & ROI prediction</span></div><div class="svc-check"><span aria-hidden="true">✓</span><span>Clear, non-technical reports with actionable recommendations</span></div></div>
 <button class="btn btn-primary" onclick="navigateTo('contact')">Get Started →</button>
-</div></div>
+</div>
+</section>
 </div>
 </div>
 
-<!-- ==================== PRICING ==================== -->
+<!-- PRICING -->
 <div class="page" id="page-pricing">
 <div style="padding-top:100px">
-
 <div style="padding:60px 32px 20px;text-align:center">
 <div class="fade-in"><span class="tag">TRANSPARENT PRICING</span></div>
 <div class="fade-in"><h1 style="font-size:38px;font-weight:800;color:var(--white);margin:16px 0">Professional. Affordable.<br><span class="gradient-text">Done For You.</span></h1></div>
 <div class="fade-in"><p style="color:var(--muted);font-size:16px;max-width:560px;margin:0 auto;line-height:1.7">You run your business. I'll build your online presence. No hidden fees, no confusing contracts, no tech jargon — just results.</p></div>
 </div>
 
-<section class="section">
+<section class="section" aria-label="Website packages">
 <div class="fade-in section-title"><span class="tag">WEBSITE PACKAGES</span><h2>Get Your Business Online</h2><p>Professional websites that load fast, look great, and rank on Google.</p></div>
 <div class="pricing-grid">
 <div class="card pricing-card fade-in">
@@ -497,12 +484,12 @@ a{color:var(--accent2);text-decoration:none;transition:opacity .2s}a:hover{opaci
 <div class="pricing-body">
 <p style="color:var(--muted);font-size:14px;line-height:1.6;margin-bottom:20px">Perfect for businesses that just need to exist online with a clean, professional presence.</p>
 <div class="pricing-section-label">What's Included</div>
-<div class="pricing-item"><span>✓</span><span>Professional 1–3 page website</span></div>
-<div class="pricing-item"><span>✓</span><span>Mobile-responsive design</span></div>
-<div class="pricing-item"><span>✓</span><span>Contact form setup</span></div>
-<div class="pricing-item"><span>✓</span><span>Basic on-page SEO (titles, metas)</span></div>
-<div class="pricing-item"><span>✓</span><span>Google Analytics installed</span></div>
-<div class="pricing-item"><span>✓</span><span>1 round of revisions</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>Professional 1–3 page website</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>Mobile-responsive design</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>Contact form setup</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>Basic on-page SEO (titles, metas)</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>Google Analytics installed</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>1 round of revisions</span></div>
 <div style="margin-top:24px"><button class="btn btn-outline" onclick="navigateTo('contact')" style="width:100%;text-align:center;padding:12px">Get Started →</button></div>
 </div>
 </div>
@@ -516,12 +503,12 @@ a{color:var(--accent2);text-decoration:none;transition:opacity .2s}a:hover{opaci
 <div class="pricing-body">
 <p style="color:var(--muted);font-size:14px;line-height:1.6;margin-bottom:20px">For businesses ready to show up on Google and start attracting new customers consistently.</p>
 <div class="pricing-section-label">Everything in Starter, Plus</div>
-<div class="pricing-item"><span>✓</span><span>Up to 7 pages (About, Services, Gallery, Testimonials, etc.)</span></div>
-<div class="pricing-item"><span>✓</span><span>Google Business Profile setup & optimization</span></div>
-<div class="pricing-item"><span>✓</span><span>Full on-page SEO on every page</span></div>
-<div class="pricing-item"><span>✓</span><span>Google Search Console setup</span></div>
-<div class="pricing-item"><span>✓</span><span>Social media links integration</span></div>
-<div class="pricing-item"><span>✓</span><span>2 rounds of revisions</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>Up to 7 pages (About, Services, Gallery, Testimonials, etc.)</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>Google Business Profile setup & optimization</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>Full on-page SEO on every page</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>Google Search Console setup</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>Social media links integration</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>2 rounds of revisions</span></div>
 <div style="margin-top:24px"><button class="btn btn-primary" onclick="navigateTo('contact')" style="width:100%;text-align:center;padding:12px">Get Started →</button></div>
 </div>
 </div>
@@ -534,53 +521,53 @@ a{color:var(--accent2);text-decoration:none;transition:opacity .2s}a:hover{opaci
 <div class="pricing-body">
 <p style="color:var(--muted);font-size:14px;line-height:1.6;margin-bottom:20px">A complete digital brand presence — website, content, branding, and local visibility all done for you.</p>
 <div class="pricing-section-label">Everything in Growth, Plus</div>
-<div class="pricing-item"><span>✓</span><span>Up to 12 pages with custom design</span></div>
-<div class="pricing-item"><span>✓</span><span>Logo design or refinement</span></div>
-<div class="pricing-item"><span>✓</span><span>Professional copywriting for all pages</span></div>
-<div class="pricing-item"><span>✓</span><span>Local directory listings (Yelp, BBB, industry sites)</span></div>
-<div class="pricing-item"><span>✓</span><span>Image sourcing & optimization</span></div>
-<div class="pricing-item"><span>✓</span><span>Priority support · 3 rounds of revisions</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>Up to 12 pages with custom design</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>Logo design or refinement</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>Professional copywriting for all pages</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>Local directory listings (Yelp, BBB, industry sites)</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>Image sourcing & optimization</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>Priority support · 3 rounds of revisions</span></div>
 <div style="margin-top:24px"><button class="btn btn-outline" onclick="navigateTo('contact')" style="width:100%;text-align:center;padding:12px">Get Started →</button></div>
 </div>
 </div>
 </div>
 </section>
 
-<section class="section section-alt">
+<section class="section section-alt" aria-label="Monthly plans">
 <div class="fade-in section-title"><span class="tag">MONTHLY PLANS</span><h2>Keep It Fresh. Stay Visible.</h2><p>Your website shouldn't be "set it and forget it." Stay updated, stay ranked, stay ahead.</p></div>
 <div class="retainer-grid">
 <div class="card-static retainer-card fade-in">
 <h4>Basic Care</h4>
 <div class="retainer-price">$50<span>/mo</span></div>
 <p style="color:var(--muted);font-size:13px;margin-bottom:16px">Essential upkeep to keep your site running smoothly.</p>
-<div class="pricing-item"><span>✓</span><span>Monthly content & photo updates</span></div>
-<div class="pricing-item"><span>✓</span><span>Security & uptime monitoring</span></div>
-<div class="pricing-item"><span>✓</span><span>Minor text and layout edits</span></div>
-<div class="pricing-item"><span>✓</span><span>Monthly performance check</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>Monthly content & photo updates</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>Security & uptime monitoring</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>Minor text and layout edits</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>Monthly performance check</span></div>
 </div>
 <div class="card retainer-card fade-in" style="border-color:var(--accent)">
 <h4>Growth Care</h4>
 <div class="retainer-price">$100<span>/mo</span></div>
 <p style="color:var(--muted);font-size:13px;margin-bottom:16px">Everything in Basic, plus SEO performance tracking.</p>
-<div class="pricing-item"><span>✓</span><span>Everything in Basic Care</span></div>
-<div class="pricing-item"><span>✓</span><span>Monthly SEO performance report</span></div>
-<div class="pricing-item"><span>✓</span><span>Google Business Profile post (1/mo)</span></div>
-<div class="pricing-item"><span>✓</span><span>Keyword ranking tracking</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>Everything in Basic Care</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>Monthly SEO performance report</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>Google Business Profile post (1/mo)</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>Keyword ranking tracking</span></div>
 </div>
 <div class="card-static retainer-card fade-in">
 <h4>Full SEO</h4>
 <div class="retainer-price">$250<span>/mo</span></div>
 <p style="color:var(--muted);font-size:13px;margin-bottom:16px">Ongoing optimization to grow your search visibility month over month.</p>
-<div class="pricing-item"><span>✓</span><span>Everything in Growth Care</span></div>
-<div class="pricing-item"><span>✓</span><span>Content updates & blog posts</span></div>
-<div class="pricing-item"><span>✓</span><span>Local citation management</span></div>
-<div class="pricing-item"><span>✓</span><span>Competitor monitoring & strategy adjustments</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>Everything in Growth Care</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>Content updates & blog posts</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>Local citation management</span></div>
+<div class="pricing-item"><span aria-hidden="true">✓</span><span>Competitor monitoring & strategy adjustments</span></div>
 </div>
 </div>
 <p class="fade-in" style="text-align:center;color:var(--dim);font-size:13px;margin-top:24px">No long-term contracts. Cancel anytime with 30 days notice.</p>
 </section>
 
-<section class="section">
+<section class="section" aria-label="Add-on services">
 <div class="fade-in section-title"><span class="tag">ADD-ONS</span><h2>À La Carte Services</h2><p>Need something extra? Add these to any package or purchase standalone.</p></div>
 <div class="addon-grid fade-in">
 <div class="addon-item"><span class="addon-name">Logo Design (from scratch)</span><span class="addon-price">$150–300</span></div>
@@ -594,26 +581,56 @@ a{color:var(--accent2);text-decoration:none;transition:opacity .2s}a:hover{opaci
 </div>
 </section>
 
-<section class="section section-alt">
+<section class="section section-alt" aria-label="Frequently asked questions">
+<div class="fade-in section-title"><span class="tag">FAQ</span><h2>Common Questions</h2><p>Everything you need to know before getting started.</p></div>
+<div class="faq-grid fade-in" role="list">
+<div class="faq-item" role="listitem">
+<button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false"><h4>Do I own my website after it's built?</h4><span class="faq-arrow" aria-hidden="true">▾</span></button>
+<div class="faq-a" role="region"><p>Yes, 100%. Once the project is complete and paid for, you own everything — the code, the design, the content, and the domain. I don't lock you into any proprietary platform or charge ongoing fees to keep your site live. If you ever want to move on, you take everything with you.</p></div>
+</div>
+<div class="faq-item" role="listitem">
+<button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false"><h4>What platform do you build websites on?</h4><span class="faq-arrow" aria-hidden="true">▾</span></button>
+<div class="faq-a" role="region"><p>I build lightweight, static websites using clean HTML, CSS, and JavaScript. This means your site loads faster than WordPress or Wix alternatives, costs nothing to host (via platforms like GitHub Pages or Netlify), and is more secure since there's no database to hack. For clients who need a CMS (content management system), an e-commerce online store, or something more advanced, we can discuss options like Shopify, SquareSpace, Wix, or other platforms.</p></div>
+</div>
+<div class="faq-item" role="listitem">
+<button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false"><h4>How long until I see results from SEO?</h4><span class="faq-arrow" aria-hidden="true">▾</span></button>
+<div class="faq-a" role="region"><p>SEO is a long-term investment, but you'll start seeing movement within the first 30–60 days. Your site will be indexed by Google, your Google Business Profile will be active, and you'll start appearing in local searches. Meaningful traffic growth typically happens in the 60–90 day range, with compounding results over 3–6 months.</p></div>
+</div>
+<div class="faq-item" role="listitem">
+<button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false"><h4>What if I need changes after my site launches?</h4><span class="faq-arrow" aria-hidden="true">▾</span></button>
+<div class="faq-a" role="region"><p>Every package includes at least one round of revisions during the build process. After launch, you can sign up for a monthly care plan starting at $50/month for ongoing updates, or request one-off changes on an as-needed basis. I'm always available by email for quick questions.</p></div>
+</div>
+<div class="faq-item" role="listitem">
+<button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false"><h4>I don't have much data yet. Can you still help?</h4><span class="faq-arrow" aria-hidden="true">▾</span></button>
+<div class="faq-a" role="region"><p>Absolutely. If you're just getting started, a website package with built-in analytics tracking is the perfect foundation. I'll set up Google Analytics 4 and Search Console from day one so you start collecting valuable data immediately. As your data grows, we can layer on dashboards, reports, and predictive models.</p></div>
+</div>
+<div class="faq-item" role="listitem">
+<button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false"><h4>Do you work with businesses outside the Twin Cities?</h4><span class="faq-arrow" aria-hidden="true">▾</span></button>
+<div class="faq-a" role="region"><p>Yes! While I specialize in local SEO for Minneapolis–St. Paul businesses, all of my services work for remote clients too. Website design, analytics, and digital strategy can all be done remotely. I'm happy to work with businesses anywhere in Minnesota or beyond.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section" aria-label="What to expect">
 <div class="fade-in section-title"><span class="tag">WHAT TO EXPECT</span><h2>Real Results, Realistic Timeline</h2><p>Here's what I actually do and when you'll start seeing results.</p></div>
 <div style="max-width:800px;margin:0 auto">
 <div class="card-static fade-in" style="padding:28px;margin-bottom:20px">
 <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px">
-<div style="width:48px;height:48px;border-radius:12px;background:var(--glow);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">🔍</div>
+<div style="width:48px;height:48px;border-radius:12px;background:var(--glow);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0" aria-hidden="true">🔍</div>
 <div><h3 style="font-size:17px;font-weight:700;color:var(--white)">Google Business Profile Setup</h3><p style="font-size:13px;color:var(--dim)">Included in Growth & Premium packages</p></div>
 </div>
 <p style="color:var(--muted);font-size:14px;line-height:1.7">I'll claim or create your Google Business Profile, optimize your description with targeted keywords, select the right categories, upload professional photos, set your hours and service areas, and create your first Google Posts. This is the single fastest way to appear in local search results and Google Maps.</p>
 </div>
 <div class="card-static fade-in" style="padding:28px;margin-bottom:20px">
 <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px">
-<div style="width:48px;height:48px;border-radius:12px;background:var(--glow);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">⚙️</div>
+<div style="width:48px;height:48px;border-radius:12px;background:var(--glow);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0" aria-hidden="true">⚙️</div>
 <div><h3 style="font-size:17px;font-weight:700;color:var(--white)">On-Page SEO (Every Site I Build)</h3><p style="font-size:13px;color:var(--dim)">Included in all packages</p></div>
 </div>
 <p style="color:var(--muted);font-size:14px;line-height:1.7">Every website I build includes keyword-rich title tags, optimized meta descriptions, proper heading structure, alt text on all images, internal linking, clean URL structure, schema markup for local businesses, mobile optimization, image compression, and a submitted sitemap. This isn't an add-on — it's how every site should be built.</p>
 </div>
 <div class="card-static fade-in" style="padding:28px;margin-bottom:20px">
 <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px">
-<div style="width:48px;height:48px;border-radius:12px;background:var(--glow);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">📈</div>
+<div style="width:48px;height:48px;border-radius:12px;background:var(--glow);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0" aria-hidden="true">📈</div>
 <div><h3 style="font-size:17px;font-weight:700;color:var(--white)">Analytics & Tracking Setup</h3><p style="font-size:13px;color:var(--dim)">Included in all packages</p></div>
 </div>
 <p style="color:var(--muted);font-size:14px;line-height:1.7">I set up Google Analytics 4, verify your site in Google Search Console, submit your sitemap, and configure event tracking for form submissions and phone clicks. You'll get a simple monthly snapshot showing exactly how people are finding you and what they're doing on your site.</p>
@@ -641,18 +658,18 @@ a{color:var(--accent2);text-decoration:none;transition:opacity .2s}a:hover{opaci
 </div>
 </section>
 
-<section class="section">
+<section class="section section-alt" aria-label="Why work with me">
 <div class="fade-in section-title"><span class="tag">THE DIFFERENCE</span><h2>Why Work With Me</h2></div>
 <div class="why-grid fade-in">
-<div class="why-card"><div class="why-icon">💰</div><h4>No Hidden Fees</h4><p>Your hosting is free. You own everything. I don't hold your site hostage with recurring platform fees.</p></div>
-<div class="why-card"><div class="why-icon">⚡</div><h4>Built for Speed</h4><p>Static sites load faster than WordPress or Wix. Google rewards fast sites with higher rankings.</p></div>
-<div class="why-card"><div class="why-icon">🎯</div><h4>Real SEO, Not a Checkbox</h4><p>Every site includes genuine optimization that helps local customers find you — not just a plugin install.</p></div>
-<div class="why-card"><div class="why-icon">🧠</div><h4>Data-Driven Decisions</h4><p>UMN-trained analytics. Every strategy is backed by real data, not guesswork or gut feelings.</p></div>
+<div class="why-card"><div class="why-icon" aria-hidden="true">💰</div><h4>No Hidden Fees</h4><p>Your hosting is free. You own everything. I don't hold your site hostage with recurring platform fees.</p></div>
+<div class="why-card"><div class="why-icon" aria-hidden="true">⚡</div><h4>Built for Speed</h4><p>Static sites load faster than WordPress or Wix. Google rewards fast sites with higher rankings.</p></div>
+<div class="why-card"><div class="why-icon" aria-hidden="true">🎯</div><h4>Real SEO, Not a Checkbox</h4><p>Every site includes genuine optimization that helps local customers find you — not just a plugin install.</p></div>
+<div class="why-card"><div class="why-icon" aria-hidden="true">🧠</div><h4>Data-Driven Decisions</h4><p>UMN-trained analytics. Every strategy is backed by real data, not guesswork or gut feelings.</p></div>
 </div>
 </section>
 
-<section class="section section-alt cta-section">
-<div class="cta-glow"></div>
+<section class="section cta-section" aria-label="Call to action">
+<div class="cta-glow" aria-hidden="true"></div>
 <div class="fade-in" style="position:relative">
 <h2 style="font-size:28px;font-weight:700;color:var(--white);margin-bottom:12px">Not Sure Which Package Is Right for You?</h2>
 <p style="color:var(--muted);font-size:16px;max-width:480px;margin:0 auto 32px;line-height:1.7">Book a free 30-minute strategy call. I'll assess your current digital presence and recommend exactly what you need — no pressure, no obligation.</p>
@@ -662,7 +679,7 @@ a{color:var(--accent2);text-decoration:none;transition:opacity .2s}a:hover{opaci
 </div>
 </div>
 
-<!-- ==================== PORTFOLIO ==================== -->
+<!-- PORTFOLIO -->
 <div class="page" id="page-portfolio">
 <div style="padding-top:100px">
 <div style="padding:60px 32px 40px;text-align:center">
@@ -672,43 +689,43 @@ a{color:var(--accent2);text-decoration:none;transition:opacity .2s}a:hover{opaci
 </div>
 <div style="padding:0 32px 80px;max-width:900px;margin:0 auto">
 <div class="portfolio-item fade-in">
-<div class="portfolio-item-header" onclick="togglePortfolio(this)">
-<div class="portfolio-item-thumb" style="background:rgba(99,102,241,.12)">Thumb</div>
+<div class="portfolio-item-header" onclick="togglePortfolio(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter')togglePortfolio(this)">
+<div class="portfolio-item-thumb" style="background:linear-gradient(135deg,rgba(99,102,241,.15),rgba(139,92,246,.08))"><span aria-hidden="true">📱</span></div>
 <div class="portfolio-item-info"><span class="tag">DIGITAL MARKETING</span><h3>Nonprofit Social Media Overhaul</h3><p style="color:var(--dim);font-size:13px;margin-top:4px">Partners Jordan — Social accountability organization (MENA region)</p></div>
-<span class="portfolio-arrow">▾</span>
+<span class="portfolio-arrow" aria-hidden="true">▾</span>
 </div>
-<div class="portfolio-detail">
+<div class="portfolio-detail" role="region">
 <div class="pd-section"><p class="pd-label">Challenge</p><p style="color:var(--text);font-size:14px;line-height:1.7">The organization's social media presence had low engagement and inconsistent posting, limiting public outreach during a critical period of research publication.</p></div>
 <div class="pd-section"><p class="pd-label">My Role</p><p style="color:var(--accent2);font-weight:500;font-size:14px">Social Media Strategist & Research Intern</p></div>
 <div class="pd-section"><p class="pd-label">Approach</p>
-<div class="approach-item"><span>→</span><span>Audited existing social channels and identified content gaps and audience engagement patterns</span></div>
-<div class="approach-item"><span>→</span><span>Developed a strategic posting schedule optimized for peak audience activity windows</span></div>
-<div class="approach-item"><span>→</span><span>Analyzed engagement data weekly to refine content strategy and messaging</span></div>
-<div class="approach-item"><span>→</span><span>Supported authorship of research papers, amplifying reach through digital channels</span></div>
+<div class="approach-item"><span aria-hidden="true">→</span><span>Audited existing social channels and identified content gaps and audience engagement patterns</span></div>
+<div class="approach-item"><span aria-hidden="true">→</span><span>Developed a strategic posting schedule optimized for peak audience activity windows</span></div>
+<div class="approach-item"><span aria-hidden="true">→</span><span>Analyzed engagement data weekly to refine content strategy and messaging</span></div>
+<div class="approach-item"><span aria-hidden="true">→</span><span>Supported authorship of research papers, amplifying reach through digital channels</span></div>
 </div>
 <div class="pd-section"><p class="pd-label">Results</p>
-<div class="result-item"><span>✓</span><span>Transformed posting from sporadic to consistent, structured content calendar</span></div>
-<div class="result-item"><span>✓</span><span>Improved engagement metrics across all social platforms</span></div>
-<div class="result-item"><span>✓</span><span>Supported research publications reaching international audiences</span></div>
-<div class="result-item"><span>✓</span><span>Built a repeatable social media framework the organization continues to use</span></div>
+<div class="result-item"><span aria-hidden="true">✓</span><span>Transformed posting from sporadic to consistent, structured content calendar</span></div>
+<div class="result-item"><span aria-hidden="true">✓</span><span>Improved engagement metrics across all social platforms</span></div>
+<div class="result-item"><span aria-hidden="true">✓</span><span>Supported research publications reaching international audiences</span></div>
+<div class="result-item"><span aria-hidden="true">✓</span><span>Built a repeatable social media framework the organization continues to use</span></div>
 </div>
 <div class="pd-section"><p class="pd-label">Tools Used</p><div class="tools-wrap"><span class="tool-tag">Meta Business Suite</span><span class="tool-tag">Instagram Analytics</span><span class="tool-tag">Google Sheets</span><span class="tool-tag">Content Scheduling</span></div></div>
 </div>
 </div>
 <div class="portfolio-item fade-in">
-<div class="portfolio-item-header" onclick="togglePortfolio(this)">
-<div class="portfolio-item-thumb" style="background:rgba(139,92,246,.15);font-size:24px;color:var(--accent2)">▶</div>
+<div class="portfolio-item-header" onclick="togglePortfolio(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter')togglePortfolio(this)">
+<div class="portfolio-item-thumb" style="background:linear-gradient(135deg,rgba(139,92,246,.15),rgba(99,102,241,.08))"><span aria-hidden="true">📊</span></div>
 <div class="portfolio-item-info"><span class="tag">DATA VISUALIZATION</span><h3>Data Visualization with Python Seaborn — Video Tutorial</h3><p style="color:var(--dim);font-size:13px;margin-top:4px">MABA 6311: Programming for Data Analytics — University of Minnesota (Spring 2025)</p></div>
-<span class="portfolio-arrow">▾</span>
+<span class="portfolio-arrow" aria-hidden="true">▾</span>
 </div>
-<div class="portfolio-detail">
-<div style="margin-bottom:24px;border-radius:12px;overflow:hidden;aspect-ratio:16/9"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/62BQI-TWwQA" title="Seaborn Data Visualization Demo — Priya Saravanakumaran" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen style="border-radius:12px"></iframe></div>
+<div class="portfolio-detail" role="region">
+<div style="margin-bottom:24px;border-radius:12px;overflow:hidden;aspect-ratio:16/9"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/62BQI-TWwQA" title="Seaborn Data Visualization Demo by Priya Saravanakumaran" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen style="border-radius:12px"></iframe></div>
 <div class="pd-section"><p class="pd-label">Overview</p><p style="color:var(--text);font-size:14px;line-height:1.7">A comprehensive video demonstration of Python's Seaborn library for data visualization, created as part of my graduate coursework in Programming for Data Analytics at the University of Minnesota.</p></div>
 <div class="pd-section"><p class="pd-label">What's Covered</p>
-<div class="approach-item"><span>→</span><span>Setting up Seaborn and loading datasets in Python</span></div>
-<div class="approach-item"><span>→</span><span>Creating statistical visualizations (distribution plots, heatmaps, pair plots, etc.)</span></div>
-<div class="approach-item"><span>→</span><span>Customizing chart aesthetics for professional presentation</span></div>
-<div class="approach-item"><span>→</span><span>Best practices for choosing the right visualization for your data</span></div>
+<div class="approach-item"><span aria-hidden="true">→</span><span>Setting up Seaborn and loading datasets in Python</span></div>
+<div class="approach-item"><span aria-hidden="true">→</span><span>Creating statistical visualizations (distribution plots, heatmaps, pair plots, etc.)</span></div>
+<div class="approach-item"><span aria-hidden="true">→</span><span>Customizing chart aesthetics for professional presentation</span></div>
+<div class="approach-item"><span aria-hidden="true">→</span><span>Best practices for choosing the right visualization for your data</span></div>
 </div>
 <div class="pd-section"><p class="pd-label">Why This Matters for Clients</p><p style="color:var(--text);font-size:14px;line-height:1.7">Data visualization is how I translate complex analytics into clear, actionable insights for your business. Whether it's a marketing performance dashboard or a customer segmentation report, I use tools like Seaborn, Tableau, and Power BI to make your data easy to understand and act on.</p></div>
 <div class="pd-section"><p class="pd-label">Tools Used</p><div class="tools-wrap"><span class="tool-tag">Python</span><span class="tool-tag">Seaborn</span><span class="tool-tag">Matplotlib</span><span class="tool-tag">Pandas</span><span class="tool-tag">Jupyter Notebook</span></div></div>
@@ -724,7 +741,7 @@ a{color:var(--accent2);text-decoration:none;transition:opacity .2s}a:hover{opaci
 </div>
 </div>
 
-<!-- ==================== ABOUT ==================== -->
+<!-- ABOUT -->
 <div class="page" id="page-about">
 <div style="padding-top:100px">
 <div style="padding:60px 32px;max-width:800px;margin:0 auto" class="about-wrap">
@@ -743,7 +760,7 @@ a{color:var(--accent2);text-decoration:none;transition:opacity .2s}a:hover{opaci
 <div class="card-static about-card fade-in" style="padding:32px">
 <h2>Education & Credentials</h2>
 <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:20px">
-<span style="font-size:24px">🎓</span>
+<span aria-hidden="true" style="font-size:24px">🎓</span>
 <div>
 <p style="color:var(--white);font-weight:600;font-size:15px">Master's of Applied Business Analytics</p>
 <p style="color:var(--accent2);font-size:14px">University of Minnesota — In Progress</p>
@@ -783,7 +800,7 @@ a{color:var(--accent2);text-decoration:none;transition:opacity .2s}a:hover{opaci
 </div>
 </div>
 
-<!-- ==================== CONTACT ==================== -->
+<!-- CONTACT -->
 <div class="page" id="page-contact">
 <div style="padding-top:100px">
 <div style="padding:60px 32px 80px;max-width:900px;margin:0 auto">
@@ -794,17 +811,19 @@ a{color:var(--accent2);text-decoration:none;transition:opacity .2s}a:hover{opaci
 <form action="https://formspree.io/f/maqdabgg" method="POST" id="contactFormEl" onsubmit="handleSubmit(event)">
 <h3>Send a Message</h3>
 <div class="form-row">
-<div style="flex:1"><label class="form-label">First Name *</label><input class="form-input" placeholder="Your first name" name="first_name" required></div>
-<div style="flex:1"><label class="form-label">Last Name</label><input class="form-input" placeholder="Your last name" name="last_name"></div>
+<div style="flex:1"><label class="form-label" for="field-fname">First Name *</label><input class="form-input" id="field-fname" placeholder="Your first name" name="first_name" required autocomplete="given-name"></div>
+<div style="flex:1"><label class="form-label" for="field-lname">Last Name</label><input class="form-input" id="field-lname" placeholder="Your last name" name="last_name" autocomplete="family-name"></div>
 </div>
-<div class="form-group"><label class="form-label">Email *</label><input class="form-input" type="email" placeholder="you@example.com" name="email" required></div>
-<div class="form-group"><label class="form-label">Service Interested In</label><select class="form-select" name="service"><option value="">Select a service...</option><option>Website Design — Starter ($450)</option><option>Website Design — Growth ($950)</option><option>Website Design — Premium ($1,450–2,000)</option><option>SEO & Google Business Setup</option><option>Data & Predictive Analytics</option><option>Monthly Maintenance Plan</option><option>Not sure yet — let's discuss</option></select></div>
-<div class="form-group"><label class="form-label">Message *</label><textarea class="form-textarea" rows="4" placeholder="Tell me about your business and what you're looking for..." name="message" required></textarea></div>
+<div class="form-group"><label class="form-label" for="field-email">Email *</label><input class="form-input" id="field-email" type="email" placeholder="you@example.com" name="email" required autocomplete="email"></div>
+<div class="form-group"><label class="form-label" for="field-phone">Phone (optional)</label><input class="form-input" id="field-phone" type="tel" placeholder="(612) 555-0123" name="phone" autocomplete="tel"></div>
+<div class="form-group"><label class="form-label" for="field-service">Service Interested In</label><select class="form-select" id="field-service" name="service"><option value="">Select a service...</option><option>Website Design — Starter ($450)</option><option>Website Design — Growth ($950)</option><option>Website Design — Premium ($1,450–2,000)</option><option>SEO & Google Business Setup</option><option>Data & Predictive Analytics</option><option>Monthly Maintenance Plan</option><option>Not sure yet — let's discuss</option></select></div>
+<div class="form-group"><label class="form-label" for="field-message">Message *</label><textarea class="form-textarea" id="field-message" rows="4" placeholder="Tell me about your business and what you're looking for..." name="message" required></textarea></div>
+<p style="color:var(--dim);font-size:12px;margin-bottom:16px">Your information is private and will never be shared with third parties.</p>
 <button class="form-submit" type="submit">Send Message</button>
 </form>
 </div>
-<div class="card-static" id="successMsg" style="display:none;padding:48px;text-align:center">
-<div style="font-size:64px;margin-bottom:24px">✅</div>
+<div class="card-static" id="successMsg" style="display:none;padding:48px;text-align:center" role="alert">
+<div aria-hidden="true" style="font-size:64px;margin-bottom:24px">✅</div>
 <h2 style="font-size:28px;font-weight:700;color:var(--white);margin-bottom:12px">Message Sent!</h2>
 <p style="color:var(--muted);font-size:16px">Thanks for reaching out. I'll get back to you within 24 hours.</p>
 </div>
@@ -812,10 +831,10 @@ a{color:var(--accent2);text-decoration:none;transition:opacity .2s}a:hover{opaci
 <div class="contact-sidebar fade-in">
 <div class="card-static sidebar-card">
 <h3>Other Ways to Reach Me</h3>
-<div class="contact-item"><span style="font-size:20px;line-height:24px">📧</span><div><p style="color:var(--dim);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px">Email</p><p style="color:var(--text);font-size:14px">sivapriya.saravan@gmail.com</p></div></div>
-<div class="contact-item"><span style="font-size:20px;line-height:24px">📱</span><div><p style="color:var(--dim);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px">Phone</p><p style="color:var(--text);font-size:14px">612-361-9940</p></div></div>
-<div class="contact-item"><span style="font-size:20px;line-height:24px">📍</span><div><p style="color:var(--dim);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px">Location</p><p style="color:var(--text);font-size:14px">Minneapolis–St. Paul, MN</p></div></div>
-<div class="contact-item"><span style="font-size:20px;line-height:24px">💼</span><div><p style="color:var(--dim);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px">LinkedIn</p><p style="font-size:14px"><a href="https://www.linkedin.com/in/sivapriya-saravanakumaran-636b581a0" target="_blank">Connect on LinkedIn →</a></p></div></div>
+<div class="contact-item"><span aria-hidden="true" style="font-size:20px;line-height:24px">📧</span><div><p style="color:var(--dim);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px">Email</p><p style="color:var(--text);font-size:14px"><a href="mailto:sivapriya.saravan@gmail.com">sivapriya.saravan@gmail.com</a></p></div></div>
+<div class="contact-item"><span aria-hidden="true" style="font-size:20px;line-height:24px">📱</span><div><p style="color:var(--dim);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px">Phone</p><p style="color:var(--text);font-size:14px"><a href="tel:6123619940">612-361-9940</a></p></div></div>
+<div class="contact-item"><span aria-hidden="true" style="font-size:20px;line-height:24px">📍</span><div><p style="color:var(--dim);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px">Location</p><p style="color:var(--text);font-size:14px">Minneapolis–St. Paul, MN</p></div></div>
+<div class="contact-item"><span aria-hidden="true" style="font-size:20px;line-height:24px">💼</span><div><p style="color:var(--dim);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px">LinkedIn</p><p style="font-size:14px"><a href="https://www.linkedin.com/in/sivapriya-saravanakumaran-636b581a0" target="_blank" rel="noopener noreferrer">Connect on LinkedIn →</a></p></div></div>
 </div>
 <div class="card-static sidebar-card">
 <h3 style="font-size:16px">Prefer to Talk Directly?</h3>
@@ -831,81 +850,124 @@ a{color:var(--accent2);text-decoration:none;transition:opacity .2s}a:hover{opaci
 </div>
 </div>
 
-<!-- ==================== FOOTER ==================== -->
-<footer class="footer">
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
 <div class="footer-inner">
 <div class="footer-col">
 <div style="display:flex;gap:10px;align-items:center;margin-bottom:12px">
-<div style="width:32px;height:32px;border-radius:8px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:#fff">P</div>
+<div aria-hidden="true" style="width:32px;height:32px;border-radius:8px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:#fff">P</div>
 <span style="font-weight:700;color:var(--white);font-size:15px">Priya Saravanakumaran</span>
 </div>
 <p style="color:var(--muted);font-size:13px;line-height:1.6">Digital Marketing & Analytics<br>Minneapolis–St. Paul, MN</p>
 </div>
 <div class="footer-col">
 <p class="footer-label">Pages</p>
-<a class="footer-link" onclick="navigateTo('home')">Home</a>
-<a class="footer-link" onclick="navigateTo('services')">Services</a>
-<a class="footer-link" onclick="navigateTo('pricing')">Pricing</a>
-<a class="footer-link" onclick="navigateTo('portfolio')">Portfolio</a>
-<a class="footer-link" onclick="navigateTo('about')">About</a>
-<a class="footer-link" onclick="navigateTo('contact')">Contact</a>
+<button class="footer-link" onclick="navigateTo('home')">Home</button>
+<button class="footer-link" onclick="navigateTo('services')">Services</button>
+<button class="footer-link" onclick="navigateTo('pricing')">Pricing</button>
+<button class="footer-link" onclick="navigateTo('portfolio')">Portfolio</button>
+<button class="footer-link" onclick="navigateTo('about')">About</button>
+<button class="footer-link" onclick="navigateTo('contact')">Contact</button>
 </div>
 <div class="footer-col">
 <p class="footer-label">Services</p>
-<a class="footer-link" onclick="navigateTo('pricing')">Website Packages</a>
-<a class="footer-link" onclick="navigateTo('services')">SEO & Local Search</a>
-<a class="footer-link" onclick="navigateTo('services')">Data Analytics</a>
-<a class="footer-link" onclick="navigateTo('pricing')">Monthly Plans</a>
+<button class="footer-link" onclick="navigateTo('pricing')">Website Packages</button>
+<button class="footer-link" onclick="navigateTo('services')">SEO & Local Search</button>
+<button class="footer-link" onclick="navigateTo('services')">Data Analytics</button>
+<button class="footer-link" onclick="navigateTo('pricing')">Monthly Plans</button>
 </div>
 <div class="footer-col">
 <p class="footer-label">Connect</p>
-<p style="color:var(--muted);font-size:13px;margin-bottom:6px">sivapriya.saravan@gmail.com</p>
-<p style="color:var(--muted);font-size:13px;margin-bottom:6px">612-361-9940</p>
-<a href="https://www.linkedin.com/in/sivapriya-saravanakumaran-636b581a0" target="_blank" style="color:var(--accent2);font-size:13px;display:block;margin-top:8px">LinkedIn →</a>
+<p style="color:var(--muted);font-size:13px;margin-bottom:6px"><a href="mailto:sivapriya.saravan@gmail.com" style="color:var(--muted)">sivapriya.saravan@gmail.com</a></p>
+<p style="color:var(--muted);font-size:13px;margin-bottom:6px"><a href="tel:6123619940" style="color:var(--muted)">612-361-9940</a></p>
+<a href="https://www.linkedin.com/in/sivapriya-saravanakumaran-636b581a0" target="_blank" rel="noopener noreferrer" style="color:var(--accent2);font-size:13px;display:block;margin-top:8px">LinkedIn →</a>
 </div>
 </div>
-<div class="footer-bottom"><p style="color:var(--dim);font-size:12px">© 2025 Priya Saravanakumaran. All rights reserved. · Privacy Policy · Accessibility</p></div>
+<div class="footer-bottom"><p style="color:var(--dim);font-size:12px">© 2025 Priya Saravanakumaran. All rights reserved.</p></div>
 </footer>
 
 <script>
-// Theme
 function toggleTheme(){
-const html=document.documentElement;
-const next=html.getAttribute('data-theme')==='dark'?'light':'dark';
-html.setAttribute('data-theme',next);
-try{window.themePreference=next}catch(e){}
+const h=document.documentElement,n=h.getAttribute('data-theme')==='dark'?'light':'dark';
+h.setAttribute('data-theme',n);
+// Update aria-checked on all toggle switches
+document.querySelectorAll('.toggle-track').forEach(t=>{
+t.setAttribute('aria-checked',n==='dark'?'true':'false');
+});
 }
 
-// Navigation
+// Routing
+const validPages=['home','services','pricing','portfolio','about','contact'];
+let currentPage='home';
+
 function navigateTo(pg){
+if(!validPages.includes(pg)) pg='home';
+currentPage=pg;
 document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
 document.getElementById('page-'+pg).classList.add('active');
 document.querySelectorAll('.nav-link').forEach(l=>{l.classList.remove('active');if(l.dataset.page===pg)l.classList.add('active')});
 document.getElementById('mobileMenu').classList.remove('open');
+document.getElementById('hamburgerBtn').setAttribute('aria-expanded','false');
+const titles={
+home:'Priya Saravanakumaran | Digital Marketing & Analytics – Minneapolis, MN',
+services:'Services | Priya Saravanakumaran – Digital Marketing & Analytics',
+pricing:'Pricing | Priya Saravanakumaran – Affordable Website & SEO Packages',
+portfolio:'Portfolio | Priya Saravanakumaran – Case Studies & Projects',
+about:'About | Priya Saravanakumaran – Digital Marketing Consultant Minneapolis',
+contact:'Contact | Priya Saravanakumaran – Book a Free Strategy Call'
+};
+try{document.title=titles[pg]||titles.home}catch(e){}
+try{window.location.hash=pg}catch(e){}
 window.scrollTo({top:0,behavior:'smooth'});
 setTimeout(initFadeIn,100);
 }
-function toggleMobile(){document.getElementById('mobileMenu').classList.toggle('open')}
+
+function handleHash(){
+try{
+const hash=window.location.hash.replace('#','');
+if(validPages.includes(hash)){navigateTo(hash);return}
+}catch(e){}
+navigateTo('home');
+}
+window.addEventListener('hashchange',handleHash);
+document.addEventListener('DOMContentLoaded',()=>{handleHash();initFadeIn()});
+
+function toggleMobile(){
+const menu=document.getElementById('mobileMenu');
+const btn=document.getElementById('hamburgerBtn');
+const isOpen=menu.classList.toggle('open');
+btn.setAttribute('aria-expanded',isOpen?'true':'false');
+btn.setAttribute('aria-label',isOpen?'Close menu':'Open menu');
+}
 window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>20)});
 
-// Mobile toggle visibility
 function checkMobileToggle(){
 const mt=document.getElementById('mobileToggle');
-if(window.innerWidth<=768){mt.style.display='flex'}else{mt.style.display='none'}
+mt.style.display=window.innerWidth<=768?'flex':'none';
 }
 window.addEventListener('resize',checkMobileToggle);
 checkMobileToggle();
 
-// Portfolio accordion
 function togglePortfolio(el){
 const d=el.nextElementSibling,a=el.querySelector('.portfolio-arrow');
 const isOpen=d.classList.contains('open');
 document.querySelectorAll('.portfolio-detail').forEach(x=>x.classList.remove('open'));
 document.querySelectorAll('.portfolio-arrow').forEach(x=>x.classList.remove('open'));
-if(!isOpen){d.classList.add('open');a.classList.add('open')}
+document.querySelectorAll('.portfolio-item-header').forEach(x=>x.setAttribute('aria-expanded','false'));
+if(!isOpen){d.classList.add('open');a.classList.add('open');el.setAttribute('aria-expanded','true')}
 }
 
-// Contact form
+function toggleFaq(el){
+const a=el.nextElementSibling,arrow=el.querySelector('.faq-arrow');
+const isOpen=a.classList.contains('open');
+document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));
+document.querySelectorAll('.faq-arrow').forEach(x=>x.classList.remove('open'));
+document.querySelectorAll('.faq-q').forEach(x=>x.setAttribute('aria-expanded','false'));
+if(!isOpen){a.classList.add('open');arrow.classList.add('open');el.setAttribute('aria-expanded','true')}
+}
+
 function handleSubmit(e){
 e.preventDefault();
 const form=e.target;
@@ -914,12 +976,10 @@ fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'appl
 .catch(()=>alert('Something went wrong. Please try again or email me directly.'));
 }
 
-// Fade in
 function initFadeIn(){
 const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1});
 document.querySelectorAll('.fade-in:not(.visible)').forEach(el=>obs.observe(el));
 }
-document.addEventListener('DOMContentLoaded',initFadeIn);
 </script>
 </body>
 </html>
